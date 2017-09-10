@@ -11,7 +11,6 @@ public class PlayerStateMachine : MonoBehaviour {
 
     private StateMachine<PlayerStates> fsm;
     private StateMachine<MovementStates> movementStateMachine;
-    private CharacterController characterController;
 
     private bool initialized;
 
@@ -24,7 +23,6 @@ public class PlayerStateMachine : MonoBehaviour {
     {
         movementStateMachine = GetComponent<MovementStateMachine>().StateMachine;
         fsm = StateMachine<PlayerStates>.Initialize(this, startingState);
-        characterController = player.GetComponent<CharacterController>();
         initialized = true;
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 using MonsterLove.StateMachine;
 
 public class MovementStateMachine : MonoBehaviour {
-    
     public PlayerInput playerInput;
+    public PlayerController playerController;
 
     private StateMachine<MovementStates> fsm;
 
@@ -15,6 +15,12 @@ public class MovementStateMachine : MonoBehaviour {
 
     void Default_Update()
     {
+        playerController.Move(playerInput.direction);
+    }
+
+    void Default_FixedUpdate()
+    {
+        playerController.MoveUpdate();
     }
 
     void MovementDisabled_Enter()

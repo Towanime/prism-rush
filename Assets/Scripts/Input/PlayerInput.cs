@@ -6,8 +6,6 @@ public class PlayerInput : MonoBehaviour
 {
     [Tooltip("Current key configuration.")]
     public KeyboardMouseConfig config;
-    [Tooltip("Game object that will be used to know where the camera is facing.")]
-    public GameObject cameraAnchor;
     [Tooltip("Direction to where the player will move next.")]
     public Vector3 direction;
     [Tooltip("The first direction detected without merging multiple orientations.")]
@@ -15,7 +13,6 @@ public class PlayerInput : MonoBehaviour
     [Tooltip("Rotation from the mouse to apply on the camera.")]
     public Vector3 rotation;
     public bool action;
-    public bool crystal;
 
     void Update()
     {
@@ -30,11 +27,11 @@ public class PlayerInput : MonoBehaviour
         // merge these vars later
         this.direction = Vector3.zero;
 
-        if (Input.GetKey(this.config.forward))
+        if (Input.GetKey(this.config.up))
         {
             this.direction += Vector3.forward;
         }
-        else if (Input.GetKey(this.config.backwards))
+        else if (Input.GetKey(this.config.down))
         {
             this.direction += Vector3.back;
         }
@@ -66,6 +63,5 @@ public class PlayerInput : MonoBehaviour
     private void SetActions()
     {
         this.action = Input.GetKey(this.config.action);
-        this.crystal = Input.GetKeyDown(this.config.crystal);
     }    
 }
