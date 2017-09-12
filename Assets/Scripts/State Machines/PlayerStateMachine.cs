@@ -42,7 +42,22 @@ public class PlayerStateMachine : MonoBehaviour {
         {
         }
     }
-    
+
+    void Flash_Enter()
+    {
+        // disable movement and enable dash component
+        movementStateMachine.ChangeState(MovementStates.Disabled);
+    }
+
+    void Flash_Update()
+    {
+
+    }
+
+    void Flash_Exit()
+    {
+    }
+
     public StateMachine<PlayerStates> FSM
     {
         get {
