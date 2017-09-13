@@ -7,10 +7,12 @@ public class PlayerStateMachine : MonoBehaviour {
     
     public PlayerInput playerInput;
     public GameObject player;
+    public PrismMagicEmitter prismEmitter;
     public PlayerStates startingState = PlayerStates.Default;
 
     private StateMachine<PlayerStates> fsm;
     private StateMachine<MovementStates> movementStateMachine;
+    private StateMachine<AimStates> aimingStateMachine;
 
     private bool initialized;
 
@@ -22,6 +24,7 @@ public class PlayerStateMachine : MonoBehaviour {
     void Init()
     {
         movementStateMachine = GetComponent<MovementStateMachine>().StateMachine;
+        aimingStateMachine = GetComponent<AimingStateMachine>().StateMachine;
         fsm = StateMachine<PlayerStates>.Initialize(this, startingState);
         initialized = true;
     }
@@ -29,17 +32,20 @@ public class PlayerStateMachine : MonoBehaviour {
     void Inactive_Enter()
     {
         movementStateMachine.ChangeState(MovementStates.Disabled);
+        aimingStateMachine.ChangeState(AimStates.Disabled);
     }
 
     void Default_Enter()
     {
         movementStateMachine.ChangeState(MovementStates.Default);
+        aimingStateMachine.ChangeState(AimStates.Default);
     }
 
     void Default_Update()
     {
         if (playerInput.action)
         {
+            prismEmitter.Fire();
         }
     }
     

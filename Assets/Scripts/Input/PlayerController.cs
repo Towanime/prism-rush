@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviour
 {
+    [Tooltip("Avatar model.")]
+    public GameObject avatar;
+    public Vector3 lookPoint;
 	Vector3 velocity;
 	Rigidbody rb;
 	
@@ -17,11 +19,12 @@ public class PlayerController : MonoBehaviour
 		this.velocity = velocity * 5;
 	}
 	
-	public void LookAt(Vector3 lookPoint)
-	{
-		var heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
-		transform.LookAt(heightCorrectedPoint);
-	}
+	public void LookAt(Vector3 point)
+    {
+        lookPoint = point;
+        var heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
+        avatar.transform.LookAt(heightCorrectedPoint);
+    }
 	
 	public void MoveUpdate()
 	{
