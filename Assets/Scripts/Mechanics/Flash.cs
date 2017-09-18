@@ -13,6 +13,6 @@ public class Flash : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Begin () {
-		target = avatar.
+		//target = avatar.
 	}
 }

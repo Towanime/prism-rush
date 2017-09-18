@@ -26,9 +26,8 @@ public class AimingStateMachine : MonoBehaviour
         if (groundPlane.Raycast(ray, out rayDistance))
         {
             var point = ray.GetPoint(rayDistance);
-            Debug.DrawLine(ray.origin, point, Color.red);
             playerController.LookAt(point);
-            crosshair.transform.position = point;
+            //crosshair.transform.position = point;
         }
     }
 

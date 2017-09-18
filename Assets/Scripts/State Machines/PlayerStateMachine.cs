@@ -7,7 +7,7 @@ public class PlayerStateMachine : MonoBehaviour {
     
     public PlayerInput playerInput;
     public GameObject player;
-    public PrismMagicEmitter prismEmitter;
+    public PhotonShot prismEmitter;
     public PlayerStates startingState = PlayerStates.Default;
 
     private StateMachine<PlayerStates> fsm;
