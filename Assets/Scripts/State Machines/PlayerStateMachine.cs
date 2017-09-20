@@ -7,7 +7,8 @@ public class PlayerStateMachine : MonoBehaviour {
     
     public PlayerInput playerInput;
     public GameObject player;
-    public PhotonShot prismEmitter;
+    public PhotonShot photonShot;
+    public Flash flash;
     public PlayerStates startingState = PlayerStates.Default;
 
     private StateMachine<PlayerStates> fsm;
@@ -45,7 +46,8 @@ public class PlayerStateMachine : MonoBehaviour {
     {
         if (playerInput.action)
         {
-            prismEmitter.Fire();
+            photonShot.Fire();
+            //fsm.ChangeState(PlayerStates.Flash);
         }
     }
 
@@ -53,11 +55,16 @@ public class PlayerStateMachine : MonoBehaviour {
     {
         // disable movement and enable dash component
         movementStateMachine.ChangeState(MovementStates.Disabled);
+        aimingStateMachine.ChangeState(AimStates.Disabled);
+        flash.Begin();
     }
 
     void Flash_Update()
     {
-
+        if (flash.Finished)
+        {
+            fsm.ChangeState(PlayerStates.Default);
+        }
     }
 
     void Flash_Exit()

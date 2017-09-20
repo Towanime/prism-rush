@@ -248,8 +248,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 13166843}
   player: {fileID: 866522528}
-  prismEmitter: {fileID: 866522530}
-  startingState: 1
+  photonShot: {fileID: 866522530}
+  flash: {fileID: 866522531}
+  startingState: 2
 --- !u!114 &54867791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +419,7 @@ GameObject:
   - component: {fileID: 866522534}
   - component: {fileID: 866522533}
   - component: {fileID: 866522530}
+  - component: {fileID: 866522531}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -449,10 +451,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitter: {fileID: 805387557}
-  bulletsPerSecond: 10
+  bulletsPerSecond: 2
   bulletSpeed: 15
   overrideBulletSpeed: 1
   isEnabled: 1
+--- !u!114 &866522531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866522528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420fb76a394a1f3449d647dc21a9c6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 866522528}
+  avatar: {fileID: 482382700}
+  distance: 2
+  speed: 5
 --- !u!4 &866522532
 Transform:
   m_ObjectHideFlags: 0
