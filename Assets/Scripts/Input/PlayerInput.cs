@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
     [Tooltip("Rotation from the mouse to apply on the camera.")]
     public Vector3 rotation;
     public bool action;
+	public bool selectionWheel;
 
     void Update()
     {
@@ -20,6 +21,7 @@ public class PlayerInput : MonoBehaviour
         this.SetDirection();
         this.SetRotation();
         this.SetActions();
+		this.SetWheel();
     }
 
     private void SetDirection()
@@ -63,5 +65,10 @@ public class PlayerInput : MonoBehaviour
     private void SetActions()
     {
         this.action = Input.GetKey(this.config.action);
-    }    
+    }  
+
+	private void SetWheel()
+	{
+		this.selectionWheel = Input.GetKey(this.config.SelectionWheel);
+	} 
 }
