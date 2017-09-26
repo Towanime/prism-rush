@@ -603,6 +603,53 @@ Transform:
   m_Father: {fileID: 866522532}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
+--- !u!1001 &940795654
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284729490153378, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771351488003332, guid: 6977d55b05c08e44796c98f1d3de668d,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6977d55b05c08e44796c98f1d3de668d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1442820832
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 1562383745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 3}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 771463252}
   m_RootOrder: 1
