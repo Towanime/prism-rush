@@ -6,8 +6,4 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	public PlayerInput playerInput;
 	private bool triggerPressed;
-
-	void update {
-	
-	}
 }
