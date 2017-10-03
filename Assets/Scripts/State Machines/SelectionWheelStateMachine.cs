@@ -13,8 +13,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionWheelAnimationController SelectionWheelFade;
 
-	public GameObject selectionFade;
 	public GameObject selectionWheel;
+	public GameObject selectionFade;
 
 	public Texture2D cursorTexture;
 
@@ -35,10 +35,9 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	void Default_Enter()
 	{
+		SelectionWheelAnim.GetComponent<Animator> ().Play ("Selection Wheel Anim", -1, 0);
 		SelectionWheelAnim.GetComponent<Animator> ().speed = 0;
 		SelectionWheelFade.GetComponent<Animator> ().speed = 0;
-		SelectionWheelAnim.GetComponent<Animator> ().Play ("Selection Wheel Anim", 1, 0);
-		SelectionWheelFade.GetComponent<Animator> ().Play ("Selection Fade Anim", 1, 0);
 	}
 
 	void Default_Update()
@@ -46,6 +45,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		if (playerInput.selectionWheel) 
 		{
 			fsm.ChangeState (WheelStates.Selecting);
+			Cursor.lockState = CursorLockMode.None;
 		}
 	}
 
@@ -74,9 +74,9 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	void Selecting_Exit ()
 	{
-		Cursor.visible = false;
 		SelectionWheelAnim.animPause = false;
 		SelectionWheelFade.animPause = false;
+		Cursor.visible = false;
 		selectionFade.GetComponent<Animator> ().speed = 1;
 		selectionWheel.GetComponent<Animator> ().speed = 1;
 	}

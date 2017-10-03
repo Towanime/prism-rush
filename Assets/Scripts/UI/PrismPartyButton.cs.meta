@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8c1fdfacecd15424d8485b24a9a0d091
+timeCreated: 1507054437
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PhotonShotCollider: {instanceID: 0}
+  - LightBombCollider: {instanceID: 0}
+  - FlashCollider: {instanceID: 0}
+  - PrismPartyCollider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
