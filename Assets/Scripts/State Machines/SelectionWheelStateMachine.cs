@@ -16,6 +16,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public GameObject selectionFade;
 	public GameObject selectionWheel;
 
+	public Texture2D cursorTexture;
+
 	private StateMachine<WheelStates> fsm;
 	private bool initialized;
 
@@ -27,6 +29,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	void Init()
 	{
 		fsm = StateMachine<WheelStates>.Initialize(this, startingState);
+		Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
 		initialized = true;
 	}
 
@@ -71,6 +74,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	void Selecting_Exit ()
 	{
+		Cursor.visible = false;
 		SelectionWheelAnim.animPause = false;
 		SelectionWheelFade.animPause = false;
 		selectionFade.GetComponent<Animator> ().speed = 1;

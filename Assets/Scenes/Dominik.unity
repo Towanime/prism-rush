@@ -394,6 +394,7 @@ MonoBehaviour:
   SelectionWheelFade: {fileID: 650828162}
   selectionFade: {fileID: 650828157}
   selectionWheel: {fileID: 1609426430}
+  cursorTexture: {fileID: 2800000, guid: ba507a33983124b4c8c8a1c880744724, type: 3}
 --- !u!1 &482382700
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba1a20c998edac44a88ce556f927b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectionWheel: {fileID: 0}
+  selectionWheelPosition: {x: 0, y: 0, z: 0}
   animPause: 0
   animEnd: 0
 --- !u!1 &771463251
@@ -871,6 +874,46 @@ Transform:
   m_Father: {fileID: 771463252}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1469175622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1469175623}
+  - component: {fileID: 1469175624}
+  m_Layer: 0
+  m_Name: Cursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1469175623
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1469175622}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -569.41077, y: -193.05634, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2125203790}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469175624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1469175622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e14de7a716e4d442bc17e30b5962f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489396116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1103,7 @@ Prefab:
     - target: {fileID: 224032444686080194, guid: bc9643eeed0f1744ba355be7016dd56a,
         type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224032444686080194, guid: bc9643eeed0f1744ba355be7016dd56a,
         type: 2}
@@ -1231,6 +1274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba1a20c998edac44a88ce556f927b17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectionWheel: {fileID: 1609426430}
+  selectionWheelPosition: {x: 0, y: 0, z: 0}
   animPause: 0
   animEnd: 0
 --- !u!1 &1746814957 stripped
@@ -1380,6 +1425,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1469175623}
   - {fileID: 190139477}
   m_Father: {fileID: 0}
   m_RootOrder: 3
