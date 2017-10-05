@@ -10,15 +10,15 @@ public class SelectionWheelAnimationController : MonoBehaviour {
 
 	public void AnimPause() 
 	{
-		this.GetComponent<Animator> ().speed = 0;
 		animPause = true;
-		this.GetComponent<Animator> ().Play ("Selection Wheel Anim", -1, 0.5f);
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
 	}
 
 	public void AnimEnd() 
 	{
 		animEnd = true;
-		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 }

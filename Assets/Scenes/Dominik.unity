@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 13166843}
-  startingState: 11
+  startingState: 1
   selectionGlowRotation: {fileID: 1746814961}
   SelectionWheelAnim: {fileID: 1609426433}
   SelectionWheelFade: {fileID: 650828162}
@@ -1345,7 +1345,41 @@ Prefab:
     - target: {fileID: 224171062026227560, guid: bc9643eeed0f1744ba355be7016dd56a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 220
+      value: 239
+      objectReference: {fileID: 0}
+    - target: {fileID: 224831248912936882, guid: bc9643eeed0f1744ba355be7016dd56a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 799
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726636912169140, guid: bc9643eeed0f1744ba355be7016dd56a,
+        type: 2}
+      propertyPath: selectionWheel
+      value: 
+      objectReference: {fileID: 1609426430}
+    - target: {fileID: 1266919096483366, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415627528683578, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107432870594288, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740205734169930, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093995049073868, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106795782951598, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61084480675157062, guid: bc9643eeed0f1744ba355be7016dd56a, type: 2}

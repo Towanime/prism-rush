@@ -10,6 +10,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public WheelStates startingState = WheelStates.Default;
 
 	public SelectionGlowRotation selectionGlowRotation;
+
 	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionWheelAnimationController SelectionWheelFade;
 
@@ -35,9 +36,11 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	void Default_Enter()
 	{
-		SelectionWheelAnim.GetComponent<Animator> ().Play ("Selection Wheel Anim", -1, 0);
-		SelectionWheelAnim.GetComponent<Animator> ().speed = 0;
-		SelectionWheelFade.GetComponent<Animator> ().speed = 0;
+		selectionWheel.GetComponent<Animator> ().speed = 0;
+		selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
+
+		selectionFade.GetComponent<Animator> ().speed = 0;
+		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 	}
 
 	void Default_Update()
@@ -51,54 +54,57 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	public void Selecting_Enter ()
 	{
-		if (SelectionWheelAnim.animPause == false || SelectionWheelFade.animPause == false) 
-		{
-			selectionFade.GetComponent<Animator> ().speed = 1;
-			selectionWheel.GetComponent<Animator> ().speed = 1;
-		}
+		selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 2);
+		selectionWheel.GetComponent<Animator> ().speed = 1;
+
+		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 2);
+		selectionFade.GetComponent<Animator> ().speed = 1;
 	}
 
 	void Selecting_Update ()
 	{
-		if (playerInput.selectionWheel != true) 
+		if (playerInput.selectionWheel == true && SelectionWheelAnim.animPause == true && SelectionWheelFade.animPause == true) 
 		{
-			Selecting_Exit ();
+			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
+			selectionWheel.GetComponent<Animator> ().speed = 0;
+
+			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
+			selectionFade.GetComponent<Animator> ().speed = 0;
 		}
-		if (SelectionWheelAnim.animEnd == true || SelectionWheelFade.animEnd == true) 
+		if (playerInput.selectionWheel ==false &&
+			SelectionWheelAnim.animPause == true &&
+			selectionWheel.GetComponent<Animator> ().GetInteger ("Select Wheel Toggle") == 0 &&
+			SelectionWheelFade.animPause == true &&
+			selectionWheel.GetComponent<Animator> ().GetInteger ("Select Fade State") == 0)
 		{
-			fsm.ChangeState (WheelStates.Default);
+			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 1);
+			selectionWheel.GetComponent<Animator> ().speed = 1;
+
+			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 1);
+			selectionFade.GetComponent<Animator> ().speed = 1;
+
+			SelectionWheelAnim.animPause = false;
+			SelectionWheelFade.animPause = false;
+		}
+		if (SelectionWheelAnim.animEnd == true) 
+		{
+			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
+
+			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
+
 			SelectionWheelAnim.animEnd = false;
+
 			SelectionWheelFade.animEnd = false;
+
+			Cursor.lockState = CursorLockMode.None;
+			fsm.ChangeState (WheelStates.Default);
 		}
 	}
 
 	void Selecting_Exit ()
 	{
-		SelectionWheelAnim.animPause = false;
-		SelectionWheelFade.animPause = false;
-		Cursor.visible = false;
-		selectionFade.GetComponent<Animator> ().speed = 1;
-		selectionWheel.GetComponent<Animator> ().speed = 1;
-	}
+		selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
 
-	void PhotonShotsActive_Enter () 
-	{
-		selectionGlowRotation.selectionGlowPosition = 1;
-		selectionGlowRotation.SelectionGlowSetPosition();
-	}
-	void FlashActive_Enter () 
-	{
-		selectionGlowRotation.selectionGlowPosition = 2;
-		selectionGlowRotation.SelectionGlowSetPosition();
-	}
-	void LightBombActive_Enter () 
-	{
-		selectionGlowRotation.selectionGlowPosition = 3;
-		selectionGlowRotation.SelectionGlowSetPosition();
-	}
-	void PrismPartyActive_Enter () 
-	{
-		selectionGlowRotation.selectionGlowPosition = 4;
-		selectionGlowRotation.SelectionGlowSetPosition();
+		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 	}
 }
