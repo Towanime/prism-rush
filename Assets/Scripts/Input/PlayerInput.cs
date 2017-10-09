@@ -64,7 +64,7 @@ public class PlayerInput : MonoBehaviour
 
     private void SetActions()
     {
-        this.action = Input.GetKey(this.config.action);
+        this.action = Input.GetKeyDown(this.config.action);
     }  
 
 	private void SetWheel()

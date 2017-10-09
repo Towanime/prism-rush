@@ -24,11 +24,6 @@ public class PhotonShot : MonoBehaviour {
         playerController = GetComponent<PlayerController>();
         fireRate = 1.0f / bulletsPerSecond;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void FixedUpdate()
     {

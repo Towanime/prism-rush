@@ -7,7 +7,7 @@ public class AimingStateMachine : MonoBehaviour
 {
     public PlayerInput playerInput;
     public PlayerController playerController;
-    public GameObject crosshair;
+    //public GameObject crosshair;
 
     private StateMachine<AimStates> fsm;
 
