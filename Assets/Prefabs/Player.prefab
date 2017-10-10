@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4580942323414756}
   - component: {fileID: 65674932380706288}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Flash Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatar: {fileID: 1136341828946524}
-  lookPoint: {x: 0, y: 0, z: 0}
+  speed: 8
 --- !u!114 &114327893320073306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatar: {fileID: 1136341828946524}
+  hazardDamage: 5
   distance: 8
   collisionRadius: 0.3
   speed: 25

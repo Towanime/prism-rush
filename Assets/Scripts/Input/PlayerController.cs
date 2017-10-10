@@ -5,9 +5,14 @@ public class PlayerController : MonoBehaviour
 {
     [Tooltip("Avatar model.")]
     public GameObject avatar;
-    public Vector3 lookPoint;
-	Vector3 velocity;
-	Rigidbody rb;
+    [Tooltip("Movement's speed for the avatar.")]
+    public float speed = 7;
+    // rotation for the avatar
+    private Vector3 lookPoint;
+    // movement velocity
+	private Vector3 velocity;
+    // rigidbody to move the player's position
+	private Rigidbody rb;
 	
 	void Start() 
 	{
@@ -16,7 +21,7 @@ public class PlayerController : MonoBehaviour
 	
 	public void Move(Vector3 velocity)
 	{
-		this.velocity = velocity * 5;
+		this.velocity = velocity * speed;
 	}
 	
 	public void LookAt(Vector3 point)

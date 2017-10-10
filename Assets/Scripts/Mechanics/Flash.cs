@@ -6,6 +6,8 @@ public class Flash : MonoBehaviour
 {
     [Tooltip("Player avatar model, used to know the rotation.")]
     public GameObject avatar;
+    [Tooltip("Damage done to enemies after going through them.")]
+    public float hazardDamage = 10;
     [Tooltip("Distance in unity unit to travel.")]
     public float distance = 8;
     [Tooltip("Adjust depending on the scale and center of the avatar, will dictate how easily if the flash collides with something.")]
@@ -19,6 +21,7 @@ public class Flash : MonoBehaviour
     [Tooltip("Object with the trigger used to hurt enemies while in flash mode.")]
     public GameObject flashTrigger;
     // private variables
+    private FlashHazard flashHazard;
     private int defaultLayer;
     private Collider avatarCollider;
     private Vector3 target;
@@ -30,6 +33,8 @@ public class Flash : MonoBehaviour
     void Start()
     {
         avatarCollider = GetComponent<Collider>();
+        flashHazard = flashTrigger.AddComponent(typeof(FlashHazard)) as FlashHazard;
+        flashHazard.damage = hazardDamage;
     }
     
     void FixedUpdate()

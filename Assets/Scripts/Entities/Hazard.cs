@@ -7,16 +7,11 @@ using UnityEngine;
 /// </summary>
 public class Hazard : MonoBehaviour
 {
-
     [Tooltip("If true, the hazard will do damage to the target. Use this instead of disabling the whole component.")]
-    public bool isActive;
+    public bool isActive = true;
     [Tooltip("Damage to apply.")]
     public float damage;
-
-    void Start()
-    {
-    }
-
+    
     /// <summary>
     /// Does damage to the given object only if the component is enabled 
     /// and the object is one of the targets of this component.
@@ -25,16 +20,15 @@ public class Hazard : MonoBehaviour
     /// <returns>True if the object received any damage.</returns>
     protected bool DoDamage(GameObject obj)
     {
-        // First check if the object's layer corresponds to the targetLayerMask
         if (isActive)
         {
             // maybe do othe checks here later
             // check if the object is damagable
-            /*DamageableEntity entity = obj.GetComponent<DamageableEntity>();
-            if (entity)
+            Health healthComponent = obj.GetComponent<Health>();
+            if (healthComponent)
             {
-                return entity.OnDamage(gameObject, damage);
-            }*/
+                return healthComponent.OnDamage(gameObject, damage);
+            }
         }
         return false;
     }

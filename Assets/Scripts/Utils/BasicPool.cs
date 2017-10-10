@@ -23,7 +23,7 @@ public class BasicPool : MonoBehaviour
     }
 
     // get available object
-    public GameObject GetObject()
+    public virtual GameObject GetObject()
     {
         for (int i = 0; i < pool.Count; i++)
         {
