@@ -16,7 +16,7 @@ public class SelectionGlowRotation : MonoBehaviour {
 		selectionGlowRotation = selectionGlow.GetComponent<RectTransform> ().rotation.eulerAngles;
 		selectionGlowAngle = selectionGlowRotation;
 		selectionGlowAngle.z = 180;
-		selectionGlowPosition = 1;
+		selectionGlowPosition = 0;
 		selectionGlow.GetComponent<RectTransform> ().rotation = Quaternion.Euler(selectionGlowAngle);
 
 	}

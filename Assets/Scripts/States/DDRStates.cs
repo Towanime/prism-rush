@@ -8,5 +8,6 @@ public enum DDRStates {
 	Down,
 	Left,
 	Right,
+	Active,
 	Inactive
 }

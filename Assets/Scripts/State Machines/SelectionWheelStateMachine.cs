@@ -10,11 +10,11 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	public WheelStates startingState = WheelStates.Default;
 	public DDRStateMachine ddrStateMachine;
-	public SelectionGlowRotation selectionGlowRotation;
 
 	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionWheelAnimationController SelectionWheelFade;
 
+	public GameObject selectionGlow;
 	public GameObject selectionWheel;
 	public GameObject selectionFade;
 	public GameObject chargeBar;
@@ -52,8 +52,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	{
 		if (playerInput.selectionWheel && slider.value == 100) 
 		{
-			fsm.ChangeState (WheelStates.Selecting);
 			chargeBar.SetActive (false);
+			fsm.ChangeState (WheelStates.Selecting);
 		}
 	}
 
@@ -64,12 +64,15 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 2);
 		selectionFade.GetComponent<Animator> ().speed = 1;
+
+		selectionGlow.SetActive(false);
 	}
 
 	void Selecting_Update ()
 	{
 		if (playerInput.selectionWheel == true && SelectionWheelAnim.animPause == true && SelectionWheelFade.animPause == true) 
 		{
+
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
 			selectionWheel.GetComponent<Animator> ().speed = 0;
 
@@ -80,7 +83,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			SelectionWheelAnim.animPause == true &&
 			selectionWheel.GetComponent<Animator> ().GetInteger ("Select Wheel Toggle") == 0 &&
 			SelectionWheelFade.animPause == true &&
-			selectionWheel.GetComponent<Animator> ().GetInteger ("Select Fade State") == 0)
+			selectionFade.GetComponent<Animator> ().GetInteger ("Select Fade State") == 0 &&
+			ddrStateMachine.ddrActive == false)
 		{
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 1);
 			selectionWheel.GetComponent<Animator> ().speed = 1;

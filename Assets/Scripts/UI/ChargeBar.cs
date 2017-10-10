@@ -9,8 +9,9 @@ public class ChargeBar : MonoBehaviour {
 	public GameObject r1Button;
 	public GameObject prismPartyText;
 	public GameObject chargeBar;
+	public SelectionWheelAnimationController selectWheelAnim;
 	public int maxCharge;
-	public bool abilitySuccess;
+	private int abilitySuccess = 0;
 	private Slider slider;
 
 
@@ -24,23 +25,31 @@ public class ChargeBar : MonoBehaviour {
 		{
 			slider.value += 10;
 		}
+
 		if (slider.value >= maxCharge) {
 			slider.value = maxCharge;
-			r1Button.SetActive (true);
-			prismPartyText.SetActive (true);
-			chargeBar.SetActive (false);
+			if (selectWheelAnim.animPause == false) {
+				r1Button.SetActive (true);
+				prismPartyText.SetActive (true);
+				chargeBar.SetActive (false);
+			}
 		}
-		if (slider.value < maxCharge) {
+
+		if (r1Button.activeSelf == true && slider.value >= maxCharge && selectWheelAnim.animPause == true) {
+			
 			r1Button.SetActive (false);
 			prismPartyText.SetActive (false);
-		}
-		if (r1Button.activeSelf == true && slider.value >= maxCharge && playerInput.selectionWheel) {
-			
-			if (abilitySuccess == true) {
+
+			if (abilitySuccess == 1) 
+			{
 				slider.value -= 100;
+				abilitySuccess = 0;
 			}
-			if (abilitySuccess == false) {
+
+			if (abilitySuccess == 2) 
+			{
 				slider.value -= 30;
+				abilitySuccess = 0;
 			}
 		}
 	}
