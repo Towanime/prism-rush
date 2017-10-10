@@ -8,5 +8,5 @@ public struct SlimeStatDefinition {
     public float damage;
     public float speed;
     public int splitInto;
-    public float scale;
+    public Vector3 scale;
 }

@@ -191,11 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1fdfacecd15424d8485b24a9a0d091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  glowPosition: {fileID: 1746814961}
-  wheelAnim: {fileID: 1609426433}
 --- !u!222 &18199887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -415,65 +410,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &430274190
+--- !u!1 &405276166
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 430274191}
-  - component: {fileID: 430274192}
+  - component: {fileID: 405276167}
+  - component: {fileID: 405276168}
   m_Layer: 0
-  m_Name: SelectionWheelStateMachine
+  m_Name: SlimePool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &430274191
+--- !u!4 &405276167
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 430274190}
+  m_GameObject: {fileID: 405276166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1513909173}
+  m_Father: {fileID: 1496978868}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &430274192
+--- !u!114 &405276168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 430274190}
+  m_GameObject: {fileID: 405276166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f810a923a2d40846939bf898da973c7, type: 3}
+  m_Script: {fileID: 11500000, guid: d87d0e013047e30419e8d1d1874000f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 13166843}
-  startingState: 1
-  selectionGlowRotation: {fileID: 1746814961}
-  SelectionWheelAnim: {fileID: 1609426433}
-  SelectionWheelFade: {fileID: 650828162}
-  selectionWheel: {fileID: 1609426430}
-  selectionFade: {fileID: 650828157}
-  cursorTexture: {fileID: 2800000, guid: ba507a33983124b4c8c8a1c880744724, type: 3}
---- !u!1 &650828157 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1827368579938548, guid: bc9643eeed0f1744ba355be7016dd56a,
+  pooledPrefab: {fileID: 1786574810966012, guid: 34076c97e77414d4b9a031fdd7eda4b1,
     type: 2}
-  m_PrefabInternal: {fileID: 1525380357}
---- !u!114 &650828162 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114783078753797034, guid: bc9643eeed0f1744ba355be7016dd56a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1525380357}
-  m_Script: {fileID: 11500000, guid: bba1a20c998edac44a88ce556f927b17, type: 3}
+  poolSize: 100
+  dynamicSize: 1
+  slimePhases:
+  - hp: 1
+    damage: 1
+    speed: 3.5
+    splitInto: 0
+    scale: {x: 0.2, y: 0.2, z: 0.2}
+  - hp: 5
+    damage: 2
+    speed: 3
+    splitInto: 2
+    scale: {x: 0.5, y: 0.5, z: 0.5}
+  - hp: 10
+    damage: 3
+    speed: 2
+    splitInto: 2
+    scale: {x: 1, y: 1, z: 1}
+  defaultStatPhaseIndex: 3
 --- !u!1 &771463251
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,11 +540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e4b15d2dca0b24fa243fe319f418f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  glowPosition: {fileID: 1746814961}
-  wheelAnim: {fileID: 1609426433}
 --- !u!222 &955459993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -645,6 +637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2045959139}
+  - {fileID: 405276167}
   m_Father: {fileID: 46075846}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,11 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d46413d921b68946a5beafa3aaa5084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  glowPosition: {fileID: 1746814961}
-  wheelAnim: {fileID: 1609426433}
 --- !u!222 &1513815283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -715,7 +703,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 54867789}
-  - {fileID: 430274191}
   m_Father: {fileID: 46075846}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1088,12 +1075,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1512068821597674, guid: bc9643eeed0f1744ba355be7016dd56a,
     type: 2}
   m_PrefabInternal: {fileID: 1525380357}
---- !u!114 &1609426433 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114726636912169140, guid: bc9643eeed0f1744ba355be7016dd56a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1525380357}
-  m_Script: {fileID: 11500000, guid: bba1a20c998edac44a88ce556f927b17, type: 3}
 --- !u!1 &1678296524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,13 +1173,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &1746814961 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114491664846017422, guid: bc9643eeed0f1744ba355be7016dd56a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1525380357}
-  m_Script: {fileID: 11500000, guid: 465a5d9aa0cfb5140a148d3541684435, type: 3}
---- !u!1001 &1753160014
+--- !u!1001 &1684092346
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1237,11 +1212,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 23994158036949550, guid: 34076c97e77414d4b9a031fdd7eda4b1,
+    - target: {fileID: 114372377488065410, guid: 34076c97e77414d4b9a031fdd7eda4b1,
         type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b651bbd20af16fc4bb85a19c64940623, type: 2}
+      propertyPath: initialHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
   m_IsPrefabParent: 0
@@ -1330,11 +1305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ac65f4990cb26458a547a5f68dfced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  glowPosition: {fileID: 1746814961}
-  wheelAnim: {fileID: 1609426433}
 --- !u!222 &2068821657
 CanvasRenderer:
   m_ObjectHideFlags: 0
