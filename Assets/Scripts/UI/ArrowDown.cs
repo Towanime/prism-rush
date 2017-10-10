@@ -4,20 +4,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LightBombButton : Graphic, IPointerEnterHandler {
+public class ArrowDown : MonoBehaviour {
 
 	public SelectionGlowRotation glowPosition;
 	public SelectionWheelAnimationController wheelAnim;
 
-	protected override void OnPopulateMesh ( VertexHelper vh)
-	{
-		vh.Clear ();
-	}
-
-	public void OnPointerEnter (PointerEventData eventData) 
+	public void Something ()
 	{
 		if (wheelAnim.animPause == true && Cursor.lockState == CursorLockMode.None) {
-			glowPosition.selectionGlowPosition = 3;
+			glowPosition.selectionGlowPosition = 4;
 			glowPosition.SelectionGlowSetPosition ();
 		}
 	}

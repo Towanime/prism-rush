@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WheelStates {
+public enum DDRStates {
 	
-	Default,
-	Selecting
+	Up,
+	Down,
+	Left,
+	Right,
+	Inactive
 }

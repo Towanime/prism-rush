@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using MonsterLove.StateMachine;
 
 public class SelectionWheelStateMachine : MonoBehaviour {
@@ -8,7 +9,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public PlayerInput playerInput;
 
 	public WheelStates startingState = WheelStates.Default;
-
+	public DDRStateMachine ddrStateMachine;
 	public SelectionGlowRotation selectionGlowRotation;
 
 	public SelectionWheelAnimationController SelectionWheelAnim;
@@ -16,6 +17,9 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	public GameObject selectionWheel;
 	public GameObject selectionFade;
+	public GameObject chargeBar;
+
+	public Slider slider;
 
 	public Texture2D cursorTexture;
 
@@ -30,6 +34,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	void Init()
 	{
 		fsm = StateMachine<WheelStates>.Initialize(this, startingState);
+		slider = chargeBar.GetComponent<Slider> ();
 		Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
 		initialized = true;
 	}
@@ -45,10 +50,10 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 	void Default_Update()
 	{
-		if (playerInput.selectionWheel) 
+		if (playerInput.selectionWheel && slider.value == 100) 
 		{
 			fsm.ChangeState (WheelStates.Selecting);
-			Cursor.lockState = CursorLockMode.None;
+			chargeBar.SetActive (false);
 		}
 	}
 
@@ -106,5 +111,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
 
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
+
+		chargeBar.SetActive (true);
 	}
 }

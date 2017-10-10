@@ -11,14 +11,10 @@ public class SelectionWheelAnimationController : MonoBehaviour {
 	public void AnimPause() 
 	{
 		animPause = true;
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.lockState = CursorLockMode.None;
-		Cursor.visible = true;
 	}
 
 	public void AnimEnd() 
 	{
 		animEnd = true;
-		Cursor.visible = false;
 	}
 }
