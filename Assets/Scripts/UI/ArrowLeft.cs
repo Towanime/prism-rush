@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class FlashButton : Graphic, IPointerEnterHandler {
+public class ArrowLeft : Graphic, IPointerEnterHandler {
 
 	public SelectionGlowRotation glowPosition;
 	public SelectionWheelAnimationController wheelAnim;
@@ -17,7 +17,7 @@ public class FlashButton : Graphic, IPointerEnterHandler {
 	public void OnPointerEnter (PointerEventData eventData) 
 	{
 		if (wheelAnim.animPause == true && Cursor.lockState == CursorLockMode.None) {
-			glowPosition.selectionGlowPosition = 4;
+			glowPosition.selectionGlowPosition = 3;
 			glowPosition.SelectionGlowSetPosition ();
 		}
 	}

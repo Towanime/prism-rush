@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PrismPartyButton : Graphic, IPointerEnterHandler {
+public class ArrowRight : Graphic, IPointerEnterHandler {
 
 	public SelectionGlowRotation glowPosition;
 	public SelectionWheelAnimationController wheelAnim;
@@ -17,7 +17,7 @@ public class PrismPartyButton : Graphic, IPointerEnterHandler {
 	public void OnPointerEnter (PointerEventData eventData) 
 	{
 		if (wheelAnim.animPause == true && Cursor.lockState == CursorLockMode.None) {
-			glowPosition.selectionGlowPosition = 2;
+			glowPosition.selectionGlowPosition = 1;
 			glowPosition.SelectionGlowSetPosition ();
 		}
 	}
