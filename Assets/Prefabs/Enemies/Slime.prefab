@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4816511115647920}
   - component: {fileID: 65689024872801068}
-  - component: {fileID: 114393773561964736}
+  - component: {fileID: 114372377488065410}
   - component: {fileID: 114258790276033388}
   - component: {fileID: 195442000634920292}
   m_Layer: 9
@@ -87,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 33433e8232d835f4f869cad92161f86b, type: 2}
+  - {fileID: 2100000, guid: b651bbd20af16fc4bb85a19c64940623, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 195442000634920292}
---- !u!114 &114393773561964736
+--- !u!114 &114372377488065410
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -145,10 +145,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786574810966012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb45eaf3683e57740b003d020d0fdc8b, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2c5da85b779984780bbfd591ad8ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
+  initialHealth: 0
   ignoreDamage: 0
 --- !u!195 &195442000634920292
 NavMeshAgent:

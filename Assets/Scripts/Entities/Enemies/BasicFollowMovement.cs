@@ -19,4 +19,9 @@ public class BasicFollowMovement : MonoBehaviour
 	void Update () {
         agent.destination = target.transform.position;
     }
+
+    public void UpdateSpeed(float speed)
+    {
+        agent.speed = speed;
+    }
 }
