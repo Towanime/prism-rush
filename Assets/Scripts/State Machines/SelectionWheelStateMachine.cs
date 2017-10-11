@@ -53,6 +53,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		if (playerInput.selectionWheel && slider.value == 100) 
 		{
 			chargeBar.SetActive (false);
+			ddrStateMachine.ddrActive = true;
 			fsm.ChangeState (WheelStates.Selecting);
 		}
 	}
@@ -78,14 +79,14 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 			selectionFade.GetComponent<Animator> ().speed = 0;
+
 		}
-		if (playerInput.selectionWheel ==false &&
+		if (
 			SelectionWheelAnim.animPause == true &&
-			selectionWheel.GetComponent<Animator> ().GetInteger ("Select Wheel Toggle") == 0 &&
 			SelectionWheelFade.animPause == true &&
-			selectionFade.GetComponent<Animator> ().GetInteger ("Select Fade State") == 0 &&
 			ddrStateMachine.ddrActive == false)
 		{
+
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 1);
 			selectionWheel.GetComponent<Animator> ().speed = 1;
 

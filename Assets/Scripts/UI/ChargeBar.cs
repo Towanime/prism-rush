@@ -9,9 +9,12 @@ public class ChargeBar : MonoBehaviour {
 	public GameObject r1Button;
 	public GameObject prismPartyText;
 	public GameObject chargeBar;
+
 	public SelectionWheelAnimationController selectWheelAnim;
+	public DDRStateMachine ddrStateMachine;
+
 	public int maxCharge;
-	private int abilitySuccess = 0;
+	public int abilitySuccess = 0;
 	private Slider slider;
 
 
@@ -35,7 +38,7 @@ public class ChargeBar : MonoBehaviour {
 			}
 		}
 
-		if (r1Button.activeSelf == true && slider.value >= maxCharge && selectWheelAnim.animPause == true) {
+		if (slider.value >= maxCharge && selectWheelAnim.animPause == true) {
 			
 			r1Button.SetActive (false);
 			prismPartyText.SetActive (false);
@@ -43,13 +46,18 @@ public class ChargeBar : MonoBehaviour {
 			if (abilitySuccess == 1) 
 			{
 				slider.value -= 100;
+				Debug.Log (abilitySuccess);
 				abilitySuccess = 0;
+				ddrStateMachine.ddrActive = false;
+
 			}
 
 			if (abilitySuccess == 2) 
 			{
 				slider.value -= 30;
+				Debug.Log (abilitySuccess);
 				abilitySuccess = 0;
+				ddrStateMachine.ddrActive = false;
 			}
 		}
 	}

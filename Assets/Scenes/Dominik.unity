@@ -557,7 +557,9 @@ MonoBehaviour:
   prismPartyText: {fileID: 2113317808}
   chargeBar: {fileID: 1859404307}
   selectWheelAnim: {fileID: 1609426433}
+  ddrStateMachine: {fileID: 1814254959}
   maxCharge: 0
+  abilitySuccess: 0
 --- !u!1 &430274190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,6 +2118,8 @@ GameObject:
   - component: {fileID: 1592518831}
   - component: {fileID: 1592518830}
   - component: {fileID: 1746814961}
+  - component: {fileID: 1592518833}
+  - component: {fileID: 1592518834}
   m_Layer: 5
   m_Name: Selection Glow
   m_TagString: Untagged
@@ -2177,6 +2181,35 @@ RectTransform:
   m_AnchoredPosition: {x: 1.0999756, y: 1.6000366}
   m_SizeDelta: {x: 129, y: 179}
   m_Pivot: {x: 1, y: 0.50000006}
+--- !u!114 &1592518833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592518829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e51ce73adddf54bbee296a13659d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animEnd: 0
+--- !u!95 &1592518834
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592518829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2067b6189e50fb540b2c14c5474b96c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1609426430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2567,9 @@ MonoBehaviour:
   selectionGlow: {fileID: 1592518829}
   SelectionWheelAnim: {fileID: 1609426433}
   glowPosition: {fileID: 1746814961}
+  selectGlowAnim: {fileID: 1592518833}
   playerInput: {fileID: 13166843}
+  chargeBar: {fileID: 331003251}
   startingState: 5
   playerDirections: 
   finishedList: 

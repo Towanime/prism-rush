@@ -12,7 +12,9 @@ public class DDRStateMachine : MonoBehaviour {
 
 	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionGlowRotation glowPosition;
+	public SelectionGlowAnimController selectGlowAnim;
 	public PlayerInput playerInput;
+	public ChargeBar chargeBar;
 
 	public DDRStates startingState = DDRStates.Inactive;
 	private StateMachine<DDRStates> fsm;
@@ -46,7 +48,20 @@ public class DDRStateMachine : MonoBehaviour {
 	}
 
 	void Inactive_Enter(){
-		
+
+		if (playerDirections.Count >= 4) {
+			if (CheckMatch ()) {
+				chargeBar.abilitySuccess = 1;
+			} 
+
+			if (CheckMatch () == false) {
+				chargeBar.abilitySuccess = 2;
+			}
+
+			playerDirections.Clear ();
+			finishedList.Clear ();
+		}
+
 		for(int i = 0; i < maxNumbers; i++){
 			this.arrowDirections.Add (i);
 		}
@@ -55,13 +70,10 @@ public class DDRStateMachine : MonoBehaviour {
 			finishedList.Add(ranNum);
 			arrowDirections.Remove (ranNum);
 		}
+
 	}
 		
 	void Inactive_Update(){
-
-		if (SelectionWheelAnim.animPause) {
-			ddrActive = true;
-		}
 
 		if (ddrActive == true) {
 			fsm.ChangeState (DDRStates.Active);
@@ -73,24 +85,42 @@ public class DDRStateMachine : MonoBehaviour {
 
 	void Active_Update(){
 		
-		selectionGlow.SetActive(false);
+		if(selectGlowAnim.animEnd == true){
+			selectionGlow.SetActive(false);
+			selectGlowAnim.animEnd = false;
+		}
 
-		if (Input.GetKey (playerInput.config.up)) {
+		if (playerDirections.Count >= 4) {
+
+			fsm.ChangeState (DDRStates.Inactive);
+			}
+			
+		if (Input.GetKeyDown(playerInput.config.up)) {
 			fsm.ChangeState (DDRStates.Up);
 		}
-		if (Input.GetKey (playerInput.config.down)) {
+		if (Input.GetKeyDown(playerInput.config.down)) {
 			fsm.ChangeState (DDRStates.Down);
 		}
-		if (Input.GetKey (playerInput.config.left)) {
+		if (Input.GetKeyDown(playerInput.config.left)) {
 			fsm.ChangeState (DDRStates.Left);
 		}
-		if (Input.GetKey (playerInput.config.right)) {
+		if (Input.GetKeyDown(playerInput.config.right)) {
 			fsm.ChangeState (DDRStates.Right);
 		}
+	}
+		
+
+	void Right_Enter(){
+		playerDirections.Add (0);
+		selectionGlow.SetActive(true);
+		glowPosition.selectionGlowPosition = 1;
+		glowPosition.SelectionGlowSetPosition ();
+		fsm.ChangeState (DDRStates.Active);
 	}
 
 	void Down_Enter(){
 		
+		playerDirections.Add (1);
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 4;
 		glowPosition.SelectionGlowSetPosition ();
@@ -98,6 +128,7 @@ public class DDRStateMachine : MonoBehaviour {
 	}
 
 	void Up_Enter(){
+		playerDirections.Add (3);
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 2;
 		glowPosition.SelectionGlowSetPosition ();
@@ -105,17 +136,19 @@ public class DDRStateMachine : MonoBehaviour {
 	}
 
 	void Left_Enter(){
-
+		playerDirections.Add (2);
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 3;
 		glowPosition.SelectionGlowSetPosition ();
 		fsm.ChangeState (DDRStates.Active);
 	}
-	void Right_Enter(){
 
-		selectionGlow.SetActive(true);
-		glowPosition.selectionGlowPosition = 1;
-		glowPosition.SelectionGlowSetPosition ();
-		fsm.ChangeState (DDRStates.Active);
+
+	bool CheckMatch() {
+		for (int i = 0; i < finishedList.Count; i++) {
+			if (finishedList[i] != playerDirections[i])
+				return false;
+		}
+		return true;
 	}
 }
