@@ -20,6 +20,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public GameObject selectionFade;
 	public GameObject comboColorAnim;
 	public GameObject chargeBar;
+	public GameObject bigX;
 
 	public Slider slider;
 
@@ -125,6 +126,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			selectionWheelFade.animEnd = false;
 
 			comboColors.animEnd = false;
+
+			bigX.SetActive (false);
 
 			Cursor.lockState = CursorLockMode.None;
 			fsm.ChangeState (WheelStates.Default);

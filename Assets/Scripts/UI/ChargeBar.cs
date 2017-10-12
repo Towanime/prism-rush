@@ -11,6 +11,7 @@ public class ChargeBar : MonoBehaviour {
 	public GameObject chargeBar;
 
 	public SelectionWheelAnimationController selectWheelAnim;
+	public SelectionWheelAnimationController bigXAnim;
 	public DDRStateMachine ddrStateMachine;
 
 	public int maxCharge;
@@ -52,12 +53,12 @@ public class ChargeBar : MonoBehaviour {
 
 			}
 
-			if (abilitySuccess == 2) 
-			{
-				slider.value -= 30;
-				Debug.Log (abilitySuccess);
-				abilitySuccess = 0;
+			if (abilitySuccess == 2 && bigXAnim.animEnd == true) {
+				Debug.Log ("sads");
 				ddrStateMachine.ddrActive = false;
+				slider.value -= 70;
+				abilitySuccess = 0;
+				bigXAnim.animEnd = false;
 			}
 		}
 	}
