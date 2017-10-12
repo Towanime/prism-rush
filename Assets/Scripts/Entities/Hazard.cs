@@ -22,7 +22,7 @@ public class Hazard : MonoBehaviour
     {
         if (isActive)
         {
-            // maybe do othe checks here later
+            // maybe do the checks here later
             // check if the object is damagable
             Health healthComponent = obj.GetComponent<Health>();
             if (healthComponent)
