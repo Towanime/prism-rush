@@ -11,12 +11,14 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	public WheelStates startingState = WheelStates.Default;
 	public DDRStateMachine ddrStateMachine;
 
-	public SelectionWheelAnimationController SelectionWheelAnim;
-	public SelectionWheelAnimationController SelectionWheelFade;
+	public SelectionWheelAnimationController selectionWheelAnim;
+	public SelectionWheelAnimationController selectionWheelFade;
+	public SelectionWheelAnimationController comboColors;
 
 	public GameObject selectionGlow;
 	public GameObject selectionWheel;
 	public GameObject selectionFade;
+	public GameObject comboColorAnim;
 	public GameObject chargeBar;
 
 	public Slider slider;
@@ -46,6 +48,9 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 		selectionFade.GetComponent<Animator> ().speed = 0;
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
+
+		comboColorAnim.GetComponent<Animator> ().speed = 0;
+		comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 0);
 	}
 
 	void Default_Update()
@@ -66,12 +71,15 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 2);
 		selectionFade.GetComponent<Animator> ().speed = 1;
 
+		comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 2);
+		comboColorAnim.GetComponent<Animator> ().speed = 1;
+
 		selectionGlow.SetActive(false);
 	}
 
 	void Selecting_Update ()
 	{
-		if (playerInput.selectionWheel == true && SelectionWheelAnim.animPause == true && SelectionWheelFade.animPause == true) 
+		if (playerInput.selectionWheel == true && selectionWheelAnim.animPause == true && selectionWheelFade.animPause == true && comboColors.animPause == true) 
 		{
 
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
@@ -80,10 +88,14 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 			selectionFade.GetComponent<Animator> ().speed = 0;
 
+			comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 0);
+			comboColorAnim.GetComponent<Animator> ().speed = 0;
+
 		}
 		if (
-			SelectionWheelAnim.animPause == true &&
-			SelectionWheelFade.animPause == true &&
+			selectionWheelAnim.animPause == true &&
+			selectionWheelFade.animPause == true &&
+			comboColors.animPause == true &&
 			ddrStateMachine.ddrActive == false)
 		{
 
@@ -93,18 +105,26 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 1);
 			selectionFade.GetComponent<Animator> ().speed = 1;
 
-			SelectionWheelAnim.animPause = false;
-			SelectionWheelFade.animPause = false;
+			comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 1);
+			comboColorAnim.GetComponent<Animator> ().speed = 1;
+
+			selectionWheelAnim.animPause = false;
+			selectionWheelFade.animPause = false;
+			comboColors.animPause = false;
 		}
-		if (SelectionWheelAnim.animEnd == true) 
+		if (selectionWheelAnim.animEnd == true && selectionWheelFade.animEnd == true && comboColors.animEnd == true) 
 		{
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
 
 			selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 
-			SelectionWheelAnim.animEnd = false;
+			comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 0);
 
-			SelectionWheelFade.animEnd = false;
+			selectionWheelAnim.animEnd = false;
+
+			selectionWheelFade.animEnd = false;
+
+			comboColors.animEnd = false;
 
 			Cursor.lockState = CursorLockMode.None;
 			fsm.ChangeState (WheelStates.Default);
@@ -116,6 +136,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 0);
 
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
+
+		comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 0);
 
 		chargeBar.SetActive (true);
 	}

@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using MonsterLove.StateMachine;
+using System.Linq;
 
 public class DDRStateMachine : MonoBehaviour {
 	
 	public bool ddrActive;
 
 	public GameObject selectionGlow;
+	public GameObject checkmark1;
+	public GameObject checkmark2;
+	public GameObject checkmark3;
+	public GameObject checkmark4;
 
-	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionGlowRotation glowPosition;
 	public SelectionGlowAnimController selectGlowAnim;
 	public PlayerInput playerInput;
 	public ChargeBar chargeBar;
+	public ColorAssigner colorAssigner;
 
 	public DDRStates startingState = DDRStates.Inactive;
 	private StateMachine<DDRStates> fsm;
@@ -49,6 +54,7 @@ public class DDRStateMachine : MonoBehaviour {
 
 	void Inactive_Enter(){
 
+
 		if (playerDirections.Count >= 4) {
 			if (CheckMatch ()) {
 				chargeBar.abilitySuccess = 1;
@@ -65,12 +71,18 @@ public class DDRStateMachine : MonoBehaviour {
 		for(int i = 0; i < maxNumbers; i++){
 			this.arrowDirections.Add (i);
 		}
-		for(int i = 0; i< maxNumbers; i ++){
+		for(int i = 0; i < maxNumbers; i++){
 			int ranNum = arrowDirections[Random.Range(0,arrowDirections.Count)];
 			finishedList.Add(ranNum);
 			arrowDirections.Remove (ranNum);
 		}
 
+		checkmark1.SetActive (false);
+		checkmark2.SetActive (false);
+		checkmark3.SetActive (false);
+		checkmark4.SetActive (false);
+
+		colorAssigner.AssignColors ();
 	}
 		
 	void Inactive_Update(){
@@ -81,6 +93,36 @@ public class DDRStateMachine : MonoBehaviour {
 		}
 		
 	void Active_Enter(){
+
+//		if (finishedList.ElementAt (0) != playerDirections.ElementAt(0)) {
+//			//fsm.ChangeState (DDRStates.Inactive);
+//		}
+//		if (finishedList.ElementAt (1) != playerDirections.ElementAt(1)) {
+//			//fsm.ChangeState (DDRStates.Inactive);
+//		}
+//		if (finishedList.ElementAt (2) != playerDirections.ElementAt(2)) {
+//			//fsm.ChangeState (DDRStates.Inactive);
+//		}
+//		if (finishedList.ElementAt (3) != playerDirections.ElementAt(3)) {
+//			//fsm.ChangeState (DDRStates.Inactive);
+////			if (playerDirections.Count < 4 && ddrActive == true && ) {
+////				ddrActive = false;
+////			}
+//		}
+
+		if (finishedList.ElementAt (0) == playerDirections.ElementAt(0)) {
+			checkmark1.SetActive (true);
+			Debug.Log ("dasd");
+		}
+		if (finishedList.ElementAt (1) == playerDirections.ElementAt(1)) {
+			checkmark2.SetActive (true);
+		}
+		if (finishedList.ElementAt (2) == playerDirections.ElementAt(2)) {
+			checkmark3.SetActive (true);
+		}
+		if (finishedList.ElementAt (3) == playerDirections.ElementAt(3)) {
+			checkmark4.SetActive (true);
+		}
 	}
 
 	void Active_Update(){
