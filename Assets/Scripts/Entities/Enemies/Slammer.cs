@@ -40,7 +40,7 @@ public class Slammer : MonoBehaviour {
 
 		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit)) {
 			if (hit.collider.tag == "Player") {
-				Debug.Log ("Player!");
+				gameObject.GetComponentInChildren<Animation>().Play();
 			}
 		}
 	}
