@@ -8,9 +8,9 @@ public class EnvHazardManager : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.H) && envHazard.activeInHierarchy == false) {
-			envHazard.SetActive(true);
+			envHazard.SetActive (true);
 		} else if (Input.GetKeyDown (KeyCode.H) && envHazard.activeInHierarchy == true) {
-			envHazard.SetActive(false);
+			envHazard.SetActive (false);
 		}
 	}
 }

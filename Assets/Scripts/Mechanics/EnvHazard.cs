@@ -7,7 +7,7 @@ public class EnvHazard : MonoBehaviour {
 	// Use this for initialization
 	void OnTriggerStay () {
 		//DO SOME DAMAGE
-		Debug.Log("Damage");
+		Debug.Log ("Damage");
 	}
 
 }

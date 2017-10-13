@@ -12,18 +12,24 @@ public class Slammer : MonoBehaviour {
 	//Slammer stats (speed and rotation)
 	public float speed;
 
-	private Transform slammerTransform;
+	private Vector3 slammerPos;
 
 	void Start () {
-		target = GameObject.Find("Player");
-		slammerTransform = this.transform;
+		target = GameObject.Find ("Player");
+		slammerPos = this.transform.position;
 	}
 	
 	void FixedUpdate () {
-		float currentDistance = Vector3.Distance (target.transform.position, this.transform.position);
+		Vector3 currentDirection = target.transform.position - this.transform.position;
+		currentDirection = new Vector3 (currentDirection.x, 0, currentDirection.z);
 
-		if (currentDistance < detectionDistance) {
-			this.transform.position = Vector3.Slerp (this.transform.position, target.transform.position, speed * Time.deltaTime);
+		/*if(currentDirection.magnitude >= 0.2f)
+			this.transform.position += currentDirection.normalized * speed * Time.deltaTime; */
+
+		if (currentDirection.magnitude < detectionDistance) {
+			this.transform.position = Vector3.Lerp (this.transform.position, new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z), speed * Time.deltaTime);
+		} else if (currentDirection.magnitude > detectionDistance) {
+			this.transform.position = Vector3.Lerp (this.transform.position, slammerPos, speed * Time.deltaTime);
 		}
 	}
 }
