@@ -12,8 +12,8 @@ public class PrismPickup : MonoBehaviour {
 
 	//Movement and "juice"
 	public float rotationSpeed = 85.0f;
-	public float amplitudeAmount = 0.25f;
-	public float frequencySpeed = 0.75f;
+	public float amplitudeAmount = 0.25f; //Amount of Y oscillation
+	public float frequencySpeed = 0.75f; //Speed of Y oscillation
 
 	//Position storage
 	private Vector3 posOffest = new Vector3 ();
