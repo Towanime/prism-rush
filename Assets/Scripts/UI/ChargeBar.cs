@@ -13,9 +13,10 @@ public class ChargeBar : MonoBehaviour {
 	public SelectionWheelAnimationController selectWheelAnim;
 	public SelectionWheelAnimationController bigXAnim;
 	public DDRStateMachine ddrStateMachine;
+	public Timer timer;
 
 	public int maxCharge;
-	public int abilitySuccess = 0;
+	public int abilitySuccess;
 	private Slider slider;
 
 
@@ -46,15 +47,19 @@ public class ChargeBar : MonoBehaviour {
 
 			if (abilitySuccess == 1) 
 			{
+				Debug.Log ("Pass");
 				slider.value -= 100;
-				Debug.Log (abilitySuccess);
 				abilitySuccess = 0;
+				timer.timerOn = false;
+				timer.timesUp = false;
+				timer.slider.value += 100;
+				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
-
 			}
 
 			if (abilitySuccess == 2 && bigXAnim.animEnd == true) {
-				Debug.Log ("sads");
+				Debug.Log ("Fail");
+				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
 				slider.value -= 70;
 				abilitySuccess = 0;
