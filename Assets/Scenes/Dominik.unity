@@ -752,6 +752,7 @@ MonoBehaviour:
   selectWheelAnim: {fileID: 1609426433}
   bigXAnim: {fileID: 1797580658}
   ddrStateMachine: {fileID: 1814254959}
+  timer: {fileID: 331003252}
   maxCharge: 0
   abilitySuccess: 0
 --- !u!114 &331003252
@@ -773,6 +774,7 @@ MonoBehaviour:
   maxCharge: 0
   minCharge: 0
   timerOn: 0
+  timesUp: 0
   slider: {fileID: 0}
   timer: {fileID: 1385215877}
 --- !u!1 &349659328

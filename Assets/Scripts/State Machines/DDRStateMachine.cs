@@ -151,18 +151,19 @@ public class DDRStateMachine : MonoBehaviour {
 
 			fsm.ChangeState (DDRStates.Inactive);
 			}
-			
-		if (Input.GetKeyDown(playerInput.config.up)) {
-			fsm.ChangeState (DDRStates.Up);
-		}
-		if (Input.GetKeyDown(playerInput.config.down)) {
-			fsm.ChangeState (DDRStates.Down);
-		}
-		if (Input.GetKeyDown(playerInput.config.left)) {
-			fsm.ChangeState (DDRStates.Left);
-		}
-		if (Input.GetKeyDown(playerInput.config.right)) {
-			fsm.ChangeState (DDRStates.Right);
+		if(ddrFail == false){	
+			if (Input.GetKeyDown(playerInput.config.up)) {
+				fsm.ChangeState (DDRStates.Up);
+			}
+			if (Input.GetKeyDown(playerInput.config.down)) {
+				fsm.ChangeState (DDRStates.Down);
+			}
+			if (Input.GetKeyDown(playerInput.config.left)) {
+				fsm.ChangeState (DDRStates.Left);
+			}
+			if (Input.GetKeyDown(playerInput.config.right)) {
+				fsm.ChangeState (DDRStates.Right);
+			}
 		}
 	}
 		

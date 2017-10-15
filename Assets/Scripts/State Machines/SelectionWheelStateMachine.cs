@@ -128,6 +128,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 
 			bigX.SetActive (false);
 
+			ddrStateMachine.ddrFail = false;
+
 			Cursor.lockState = CursorLockMode.None;
 			fsm.ChangeState (WheelStates.Default);
 		}
