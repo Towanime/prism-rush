@@ -7,33 +7,41 @@ public class Slammer : MonoBehaviour {
 	//Setting up the player as the Slammer's target
 	public GameObject target;
 	//The minimum distance the player needs to be for the Slammer to chase her
-	public float minDistance;
-	//Max distance before the Slammer stops chasing
-	public float maxDistance;
+	public float detectionDistance = 5.0f;
 	
 	//Slammer stats (speed and rotation)
-	public float speed;
-	public float rotationSpeed;
+	public float moveSpeed;
 
-	//Starting transform for reference
-	private Transform startingTransform;
+	public float rotSpeed;
 
-	// Use this for initialization
+	private Vector3 slammerPos;
+	private Quaternion slammerRot;
+
 	void Start () {
-		target = GameObject.Find("Player");
-		startingTransform.position = this.transform.position;
-		startingTransform.rotation = this.transform.rotation;
+		target = GameObject.Find ("Player");
+		slammerPos = this.transform.position;
+		slammerRot = this.transform.rotation;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
-		float currentDistance = Vector3.Distance (target.transform.position, this.transform.position);
-		if (currentDistance < minDistance) {
-			this.transform.position = Vector3.Slerp (this.transform.position, target.transform.position, speed * Time.deltaTime);
-			this.transform.rotation = Quaternion.Lerp (this.transform.rotation, target.transform.rotation, rotationSpeed * Time.deltaTime);
-		} else if (currentDistance > maxDistance) {
-			this.transform.position = Vector3.Lerp (this.transform.position, startingTransform.position, speed);
-			this.transform.rotation = Quaternion.Lerp (this.transform.rotation, startingTransform.rotation, rotationSpeed);
+		Vector3 currentDirection = target.transform.position - this.transform.position;
+		currentDirection = new Vector3 (currentDirection.x, 0, currentDirection.z);
+		Quaternion lookRotation = Quaternion.LookRotation(currentDirection);
+
+		if (currentDirection.magnitude < detectionDistance) {
+			this.transform.position = Vector3.Lerp (this.transform.position, new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z), moveSpeed * Time.deltaTime);
+			this.transform.rotation = Quaternion.Slerp (this.transform.rotation, lookRotation, rotSpeed * Time.deltaTime);
+		} else if (currentDirection.magnitude > detectionDistance) {
+			this.transform.position = Vector3.Lerp (this.transform.position, slammerPos, moveSpeed * Time.deltaTime);
+			this.transform.rotation = Quaternion.Slerp (this.transform.rotation, slammerRot, rotSpeed * Time.deltaTime);
+		}
+
+		RaycastHit hit;
+
+		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit)) {
+			if (hit.collider.tag == "Player") {
+				gameObject.GetComponentInChildren<Animation>().Play();
+			}
 		}
 	}
 }

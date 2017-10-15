@@ -3,18 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using MonsterLove.StateMachine;
+using System.Linq;
 
 public class DDRStateMachine : MonoBehaviour {
 	
 	public bool ddrActive;
+	public bool ddrFail;
 
 	public GameObject selectionGlow;
+	public GameObject checkmark1;
+	public GameObject checkmark2;
+	public GameObject checkmark3;
+	public GameObject checkmark4;
+	public GameObject bigX;
 
-	public SelectionWheelAnimationController SelectionWheelAnim;
 	public SelectionGlowRotation glowPosition;
 	public SelectionGlowAnimController selectGlowAnim;
+	public SelectionWheelAnimationController bigXAnim;
 	public PlayerInput playerInput;
 	public ChargeBar chargeBar;
+	public ColorAssigner colorAssigner;
 
 	public DDRStates startingState = DDRStates.Inactive;
 	private StateMachine<DDRStates> fsm;
@@ -49,6 +57,14 @@ public class DDRStateMachine : MonoBehaviour {
 
 	void Inactive_Enter(){
 
+		if (ddrFail == true){
+			bigX.SetActive (true);
+			chargeBar.abilitySuccess = 2;
+			playerDirections.Clear ();
+			finishedList.Clear ();
+			ddrFail = false;
+		}
+
 		if (playerDirections.Count >= 4) {
 			if (CheckMatch ()) {
 				chargeBar.abilitySuccess = 1;
@@ -65,12 +81,20 @@ public class DDRStateMachine : MonoBehaviour {
 		for(int i = 0; i < maxNumbers; i++){
 			this.arrowDirections.Add (i);
 		}
-		for(int i = 0; i< maxNumbers; i ++){
+		for(int i = 0; i < maxNumbers; i++){
 			int ranNum = arrowDirections[Random.Range(0,arrowDirections.Count)];
 			finishedList.Add(ranNum);
 			arrowDirections.Remove (ranNum);
 		}
 
+		checkmark1.SetActive (false);
+		checkmark2.SetActive (false);
+		checkmark3.SetActive (false);
+		checkmark4.SetActive (false);
+
+		colorAssigner.AssignColors ();
+
+	
 	}
 		
 	void Inactive_Update(){
@@ -78,9 +102,39 @@ public class DDRStateMachine : MonoBehaviour {
 		if (ddrActive == true) {
 			fsm.ChangeState (DDRStates.Active);
 			}
-		}
+
+
+	}
 		
 	void Active_Enter(){
+
+		if (playerDirections.Count != 0) {
+			
+			if (finishedList.ElementAt (0) != playerDirections.ElementAt (0)) {
+				ddrFail = true;
+				fsm.ChangeState (DDRStates.Inactive);
+			} else {
+				checkmark1.SetActive (true);
+			}
+			if (finishedList.ElementAt (1) != playerDirections.ElementAt (1)) {
+				ddrFail = true;
+				fsm.ChangeState (DDRStates.Inactive);
+			} else {
+				checkmark2.SetActive (true);
+			}
+			if (finishedList.ElementAt (2) != playerDirections.ElementAt (2)) {
+				ddrFail = true;
+				fsm.ChangeState (DDRStates.Inactive);
+			} else {
+				checkmark3.SetActive (true);
+			}
+			if (finishedList.ElementAt (3) != playerDirections.ElementAt (3)) {
+				ddrFail = true;
+				fsm.ChangeState (DDRStates.Inactive);
+			} else {
+				checkmark4.SetActive (true);
+			}
+		}
 	}
 
 	void Active_Update(){
