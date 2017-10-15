@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUp02 : MonoBehaviour {
 
-	HealthCasters hd;
+	private HealthCasters hd;
 	public float invincibleTime = 1.0f;
 	private MeshRenderer Mrender;
 
@@ -15,14 +15,14 @@ public class PowerUp02 : MonoBehaviour {
 	}
 
 
-	public void OnCollisionEnter (Collision other) 
+	public void OnTriggerEnter (Collider other) 
 	{
 		if (other.gameObject.tag == "Player")
 		{ 
 			hd = other.gameObject.GetComponent<HealthCasters>();
 			StartCoroutine(NoDamage());
-			GetComponent<MeshRenderer>().enabled = false;
-			GetComponent<BoxCollider2D>().enabled = false;
+			//GetComponent<MeshRenderer>().enabled = false;
+			//GetComponent<BoxCollider>().enabled = false;
 		}
 	}
 
@@ -35,7 +35,7 @@ public class PowerUp02 : MonoBehaviour {
 		yield return new WaitForSeconds(invincibleTime);
 		hd.enabled = true;
 		Debug.Log ("Health Enabled " + hd.currentHealth);
-		Destroy(this);
+		Destroy(gameObject);
 
 	}
 

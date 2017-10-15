@@ -5,8 +5,10 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
 	public GameObject spawnPoint;
+	public GameObject spawnPoint02;
 	public GameObject ExplosionPrefab;
 	public GameObject projectilePrefab;
+	public GameObject projectilePrefab02;
 
 
 	// Use this for initialization
@@ -28,6 +30,18 @@ public class Shooting : MonoBehaviour {
 
 
 		}
+		if(Input.GetButtonDown("Fire2"))
+		{
+			GameObject hitPlayer;
+			//Rigidbody hitPlayer;
+			hitPlayer = Instantiate(projectilePrefab02, spawnPoint.transform.position, transform.rotation) as GameObject;
+			//hitPlayer.GetComponent<FollowArc> ().SetStartPosition (spawnPoint.transform.position);
+			hitPlayer.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 100);
+			//            Physics.IgnoreCollision ( projectilePrefab.collider, transform.root.collider );
+
+
+		}
+
 
 
 	/*	for(var i =0; i < Input.touchCount; ++i)

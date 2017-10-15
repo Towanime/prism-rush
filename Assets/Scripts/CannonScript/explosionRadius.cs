@@ -6,6 +6,7 @@ using UnityEngine;
 public class explosionRadius : MonoBehaviour {
 
 	public GameObject bomb;
+	//public GameObject deathParticles;
 	public float radius = 5.0F;
 	public float power = 10.0F;
 	public float upforce = 1.0f;
@@ -28,6 +29,7 @@ public class explosionRadius : MonoBehaviour {
 
 				if (rb != null)
 				rb.AddExplosionForce(power, explosionPos, radius, upforce, ForceMode.Impulse);
+				//Instantiate (deathParticles, transform.position, Quaternion.Euler (1000, 0, 0));
 			}
 		}
 }

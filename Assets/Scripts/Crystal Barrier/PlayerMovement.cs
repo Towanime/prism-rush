@@ -8,11 +8,15 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float speed = 6f;            // The speed that the player will move at.
 
+	private bool fireBeam;
+	private bool lightBomb;
+
 	Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 	int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
-	float camRayLength = 100f;          // The length of the ray from the camera into the scene.
+	float camRayLength = 100f;
+	// The length of the ray from the camera into the scene.
 
 	void Awake ()
 	{
@@ -28,8 +32,9 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Store the input axes.
-		float h = Input.GetAxisRaw ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
+		float h = Input.GetAxisRaw ("Horizontal") * Time.deltaTime ;
+		float v = Input.GetAxisRaw ("Vertical") * Time.deltaTime;
+
 
 		// Move the player around the scene.
 		Move (h, v);
@@ -39,6 +44,12 @@ public class PlayerMovement : MonoBehaviour {
 
 		// Animate the player.
 		Animating (h, v);
+
+		//active the player's power
+		LightBomb();
+
+		//active the player's power
+		FireBeam();
 	}
 
 	void Move (float h, float v)
@@ -81,10 +92,31 @@ public class PlayerMovement : MonoBehaviour {
 	void Animating (float h, float v)
 	{
 		// Create a boolean that is true if either of the input axes is non-zero.
-		bool walking = h != 0f || v != 0f;
+		bool Walk = h != 0f || v != 0f;
+		bool Run = h != 0f || v != 0f;
 
 		// Tell the animator whether or not the player is walking.
-		anim.SetBool ("IsWalking", walking);
+		anim.SetBool ("IsWalking", Walk);
+		anim.SetBool ("IsRunning", Run);
+	}
+
+	void FireBeam()
+	{
+		
+		if(Input.GetButtonDown("Fire1"))
+		{
+			anim.SetBool ("isPowerAttack", fireBeam);
+			fireBeam = true;
+		}
+
+	}
+	void LightBomb()
+	{
+		if(Input.GetButtonDown("Fire2"))
+		{
+			anim.SetBool ("IsAttacking", lightBomb);
+			lightBomb = true;
+		}
 	}
 
 

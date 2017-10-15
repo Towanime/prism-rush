@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowArc : MonoBehaviour {
 
 	Vector3 startPos; // = new Vector3(0, 1, 1.40f);
-	Vector3 endPos = new Vector3(0, 0, 10);
+	Vector3 endPos = new Vector3(0, 63, 10);
 	float height = 4f;
 	bool startThrow = false;
 	float incrementor = 0;

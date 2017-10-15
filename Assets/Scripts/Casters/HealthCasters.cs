@@ -5,14 +5,30 @@ using UnityEngine.UI;
 
 public class HealthCasters : MonoBehaviour {
 
-	public const int maxHealth = 10;
-	public int currentHealth = maxHealth;
-	public RectTransform healthBar;
+	private CastersDeath cd;
+	public int maxHealth = 10;
+	public int currentHealth;
 
-	public void TakeDamage(int amount)
+
+	void Start()
 	{
-		currentHealth -= amount;
-
-		healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+		cd = GetComponent<CastersDeath> ();
+		currentHealth = maxHealth;
 	}
+
+	public void Update()
+	{
+		if (currentHealth < 0) 
+		{
+			currentHealth = 0;
+			cd.OnDeath();
+		}
+	}
+
+	public void TakeDamage(int damage)
+	{
+		currentHealth -= damage;
+
+	}
+
 }
