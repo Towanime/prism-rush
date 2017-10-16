@@ -18,10 +18,8 @@ public class ChargeBar : MonoBehaviour {
 
 	public int maxCharge;
 	public int abilitySuccess;
-	public float chargePower;
 
 	public Slider slider;
-	public Hazard hazard;
 
 	void Start () {
 		maxCharge = 100;

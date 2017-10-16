@@ -4100,9 +4100,7 @@ MonoBehaviour:
   timer: {fileID: 331003252}
   maxCharge: 0
   abilitySuccess: 0
-  chargePower: 0
   slider: {fileID: 1859404309}
-  hazard: {fileID: 1903178805}
 --- !u!114 &331003252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11652,7 +11650,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &795833434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11767,7 +11764,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &798900491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11824,6 +11820,7 @@ GameObject:
   - component: {fileID: 866522533}
   - component: {fileID: 866522530}
   - component: {fileID: 866522531}
+  - component: {fileID: 866522535}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -11924,6 +11921,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &866522535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866522528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75670a94535543f48845c442e7b264f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargePower: 1
+  chargeBar: {fileID: 331003251}
 --- !u!1 &893847056
 GameObject:
   m_ObjectHideFlags: 0
@@ -19162,7 +19172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &1292887328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19379,7 +19388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &1365306809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19478,6 +19486,80 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1423057861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1423057862}
+  - component: {fileID: 1423057864}
+  - component: {fileID: 1423057863}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1423057862
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423057861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2125203790}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1423057863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423057861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.7103448, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: da8c6e68ded61b244880a0aa63cc4b20, type: 3}
+    m_FontSize: 200
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: WAVE 1
+--- !u!222 &1423057864
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423057861}
 --- !u!1 &1442820832
 GameObject:
   m_ObjectHideFlags: 0
@@ -23944,7 +24026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &1903178806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24111,7 +24192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   damage: 1
-  chargeBar: {fileID: 0}
 --- !u!54 &1919672195
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27802,6 +27882,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 190139477}
+  - {fileID: 1423057862}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
