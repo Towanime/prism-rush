@@ -9,6 +9,7 @@ public class ChargeBar : MonoBehaviour {
 	public GameObject r1Button;
 	public GameObject prismPartyText;
 	public GameObject chargeBar;
+	public GameObject prismParty;
 
 	public SelectionWheelAnimationController selectWheelAnim;
 	public SelectionWheelAnimationController bigXAnim;
@@ -17,7 +18,7 @@ public class ChargeBar : MonoBehaviour {
 
 	public int maxCharge;
 	public int abilitySuccess;
-	private Slider slider;
+	public Slider slider;
 
 
 	void Start () {
@@ -48,20 +49,21 @@ public class ChargeBar : MonoBehaviour {
 			if (abilitySuccess == 1) 
 			{
 				Debug.Log ("Pass");
-				slider.value -= 100;
-				abilitySuccess = 0;
 				timer.timerOn = false;
 				timer.timesUp = false;
 				timer.slider.value += 100;
 				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
+				prismParty.SetActive (true);
+				abilitySuccess = 0;
 			}
 
 			if (abilitySuccess == 2 && bigXAnim.animEnd == true) {
 				Debug.Log ("Fail");
 				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
-				slider.value -= 70;
+				prismParty.SetActive (false);
+				slider.value = 30;
 				abilitySuccess = 0;
 				bigXAnim.animEnd = false;
 			}

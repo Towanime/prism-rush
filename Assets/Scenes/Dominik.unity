@@ -3406,7 +3406,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -4093,12 +4093,14 @@ MonoBehaviour:
   r1Button: {fileID: 937484249}
   prismPartyText: {fileID: 2113317808}
   chargeBar: {fileID: 1859404307}
+  prismParty: {fileID: 1575495262}
   selectWheelAnim: {fileID: 1609426433}
   bigXAnim: {fileID: 1797580658}
   ddrStateMachine: {fileID: 1814254959}
   timer: {fileID: 331003252}
   maxCharge: 0
   abilitySuccess: 0
+  slider: {fileID: 1859404309}
 --- !u!114 &331003252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4119,7 +4121,7 @@ MonoBehaviour:
   minCharge: 0
   timerOn: 0
   timesUp: 0
-  slider: {fileID: 0}
+  slider: {fileID: 1859404309}
   timer: {fileID: 1385215877}
 --- !u!1 &349659328
 GameObject:
@@ -10749,7 +10751,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -14815,7 +14817,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -15632,7 +15634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.95862055, b: 1, a: 0.39215687}
+  m_Color: {r: 0, g: 0.95862055, b: 1, a: 0.628}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -18364,7 +18366,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -19726,7 +19728,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1207413301
+  randomSeed: 443789924
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -22296,7 +22298,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -23066,13 +23068,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1575495263}
+  - component: {fileID: 1575495264}
   m_Layer: 0
   m_Name: Prism Party
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1575495263
 Transform:
   m_ObjectHideFlags: 0
@@ -23093,6 +23096,20 @@ Transform:
   m_Father: {fileID: 482382701}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575495264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1575495262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d865cab0e7b988e4780dfc26c51df03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeBar: {fileID: 331003251}
+  prismParty: {fileID: 1575495262}
+  speed: 30
 --- !u!1 &1592518829
 GameObject:
   m_ObjectHideFlags: 0
@@ -26745,7 +26762,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minVertexDistance: 0.2
     textureMode: 0
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0

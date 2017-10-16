@@ -14,7 +14,7 @@ public class AimingStateMachine : MonoBehaviour
     void Default_Enter()
     {
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+//        Cursor.visible = false;
     }
 
     void Default_Update()
