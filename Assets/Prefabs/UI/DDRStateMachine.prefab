@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1156694062003006}
+  m_IsPrefabParent: 1
+--- !u!1 &1156694062003006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4185897953282890}
+  - component: {fileID: 114985476494535348}
+  m_Layer: 0
+  m_Name: DDRStateMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4185897953282890
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156694062003006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114985476494535348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1156694062003006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27ea99eafc35e1428e5fd03791a084a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ddrActive: 0
+  ddrFail: 0
+  selectionGlow: {fileID: 1123368058692830, guid: 27920141cae0bc34eb301d35d22d07b8,
+    type: 2}
+  checkmark1: {fileID: 1262123652646460, guid: b2b75e7745628804987f4814d73db2a9, type: 2}
+  checkmark2: {fileID: 1102419266340370, guid: 53e6e63d19b68e6408ec726b5b94f850, type: 2}
+  checkmark3: {fileID: 1244445203068516, guid: cc1aab8474b0780459e9d74bc9d05021, type: 2}
+  checkmark4: {fileID: 1219454039267758, guid: 078b866fd483d1642be3d7b347791198, type: 2}
+  bigX: {fileID: 1054846786542738, guid: d1758eb585d39f646b305f6ab626cb37, type: 2}
+  glowPosition: {fileID: 114246055175662976, guid: 27920141cae0bc34eb301d35d22d07b8,
+    type: 2}
+  selectGlowAnim: {fileID: 114315589853795118, guid: 27920141cae0bc34eb301d35d22d07b8,
+    type: 2}
+  bigXAnim: {fileID: 114841084979921070, guid: d1758eb585d39f646b305f6ab626cb37, type: 2}
+  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
+    type: 2}
+  chargeBar: {fileID: 114788704407470000, guid: 785590393b39f3841be94ff830834412,
+    type: 2}
+  colorAssigner: {fileID: 114248113743566898, guid: de94fb2ad3e641b44967dba8838d9d73,
+    type: 2}
+  timer: {fileID: 114332109336507200, guid: 785590393b39f3841be94ff830834412, type: 2}
+  startingState: 5
+  playerDirections: 
+  finishedList: 
