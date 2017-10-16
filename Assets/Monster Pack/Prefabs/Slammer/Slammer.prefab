@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623049202875502}
   - component: {fileID: 114463264728757780}
+  - component: {fileID: 114421121451446668}
   m_Layer: 0
   m_Name: Slammer
   m_TagString: Untagged
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 65224700293964782}
   - component: {fileID: 95364602962609608}
   - component: {fileID: 111105550238350262}
+  - component: {fileID: 114446323141027208}
   m_Layer: 0
   m_Name: Giant Fist
   m_TagString: Untagged
@@ -54,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143049899513086}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4685678047827264}
@@ -69,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1429421636144276}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0.00000028088027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4623049202875502}
   m_RootOrder: 0
@@ -123,11 +125,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1429421636144276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.439199, y: 17.60845, z: 12.3676195}
-  m_Center: {x: 0.11879754, y: -8.804225, z: 0.0272255}
+  m_Size: {x: 6.0784254, y: 6.932459, z: 4.8691406}
+  m_Center: {x: 0.046770692, y: 0.91472256, z: 0.010718942}
 --- !u!95 &95364602962609608
 Animator:
   serializedVersion: 3
@@ -160,6 +162,28 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114421121451446668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143049899513086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d981d51a1fc5464882d4ee19fbe6028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114446323141027208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429421636144276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc88012b292e7444b3e56bcee8bddea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114463264728757780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,5 +197,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   detectionDistance: 5
-  moveSpeed: 0.5
+  moveSpeed: 1.39
   rotSpeed: 3
