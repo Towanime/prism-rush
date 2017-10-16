@@ -45,5 +45,7 @@ public class SlimePool : BasicPool
         slime.transform.localScale = phase.scale;
         // speed
         slime.GetComponent<BasicFollowMovement>().UpdateSpeed(phase.speed);
+        // damage
+        slime.GetComponent<EnemyTouchHazard>().damage = phase.damage;
     }
 }

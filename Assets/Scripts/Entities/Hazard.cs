@@ -34,7 +34,7 @@ public class Hazard : MonoBehaviour
             if (healthComponent)
             {
                 // if it's an enemy send damage message to player
-                if(obj.layer == LayerMask.NameToLayer("Enemies"))
+                if (obj.layer == LayerMask.NameToLayer("Enemies"))
                 {
                     player.SendMessage("OnEnemyDamage");
                 }

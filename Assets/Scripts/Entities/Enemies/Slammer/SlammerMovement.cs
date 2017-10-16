@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slammer : MonoBehaviour {
+public class SlammerMovement : MonoBehaviour {
 
 	//Setting up the player as the Slammer's target
 	public GameObject target;
@@ -34,14 +34,6 @@ public class Slammer : MonoBehaviour {
 		} else if (currentDirection.magnitude > detectionDistance) {
 			this.transform.position = Vector3.Lerp (this.transform.position, slammerPos, moveSpeed * Time.deltaTime);
 			this.transform.rotation = Quaternion.Slerp (this.transform.rotation, slammerRot, rotSpeed * Time.deltaTime);
-		}
-
-		RaycastHit hit;
-
-		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit)) {
-			if (hit.collider.tag == "Player") {
-				gameObject.GetComponentInChildren<Animation>().Play();
-			}
 		}
 	}
 }
