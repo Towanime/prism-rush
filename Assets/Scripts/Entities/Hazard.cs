@@ -18,7 +18,7 @@ public class Hazard : MonoBehaviour
     /// </summary>
     /// <param name="obj">Object to apply damage to.</param>
     /// <returns>True if the object received any damage.</returns>
-    protected bool DoDamage(GameObject obj)
+    protected virtual bool DoDamage(GameObject obj)
     {
         if (isActive)
         {
