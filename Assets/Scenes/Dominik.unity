@@ -4100,7 +4100,9 @@ MonoBehaviour:
   timer: {fileID: 331003252}
   maxCharge: 0
   abilitySuccess: 0
+  chargePower: 0
   slider: {fileID: 1859404309}
+  hazard: {fileID: 1903178805}
 --- !u!114 &331003252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11562,6 +11564,8 @@ GameObject:
   - component: {fileID: 795833432}
   - component: {fileID: 795833431}
   - component: {fileID: 795833430}
+  - component: {fileID: 795833434}
+  - component: {fileID: 795833433}
   m_Layer: 0
   m_Name: Beam6
   m_TagString: Untagged
@@ -11622,7 +11626,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795833428}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -11635,6 +11639,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 795833428}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &795833433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795833428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &795833434
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 795833428}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &798900485
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,6 +11679,8 @@ GameObject:
   - component: {fileID: 798900489}
   - component: {fileID: 798900488}
   - component: {fileID: 798900487}
+  - component: {fileID: 798900491}
+  - component: {fileID: 798900490}
   m_Layer: 0
   m_Name: Beam5
   m_TagString: Untagged
@@ -11706,7 +11741,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798900485}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -11719,6 +11754,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798900485}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &798900490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798900485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &798900491
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798900485}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &805387556
 GameObject:
   m_ObjectHideFlags: 0
@@ -19010,6 +19074,8 @@ GameObject:
   - component: {fileID: 1292887326}
   - component: {fileID: 1292887325}
   - component: {fileID: 1292887324}
+  - component: {fileID: 1292887328}
+  - component: {fileID: 1292887327}
   m_Layer: 0
   m_Name: Beam3
   m_TagString: Untagged
@@ -19070,7 +19136,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1292887322}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -19083,6 +19149,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1292887322}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1292887327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292887322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &1292887328
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292887322}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1302814310
 GameObject:
   m_ObjectHideFlags: 0
@@ -19196,6 +19291,8 @@ GameObject:
   - component: {fileID: 1365306807}
   - component: {fileID: 1365306806}
   - component: {fileID: 1365306805}
+  - component: {fileID: 1365306809}
+  - component: {fileID: 1365306808}
   m_Layer: 0
   m_Name: Beam2
   m_TagString: Untagged
@@ -19256,7 +19353,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365306803}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -19269,6 +19366,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365306803}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1365306808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365306803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &1365306809
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365306803}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1385215877
 GameObject:
   m_ObjectHideFlags: 0
@@ -23782,6 +23908,8 @@ GameObject:
   - component: {fileID: 1903178809}
   - component: {fileID: 1903178808}
   - component: {fileID: 1903178807}
+  - component: {fileID: 1903178806}
+  - component: {fileID: 1903178805}
   m_Layer: 0
   m_Name: Beam1
   m_TagString: Untagged
@@ -23803,6 +23931,35 @@ Transform:
   m_Father: {fileID: 1575495263}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1903178805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903178803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &1903178806
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903178803}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!23 &1903178807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23842,7 +23999,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1903178803}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -23866,6 +24023,8 @@ GameObject:
   - component: {fileID: 1919672193}
   - component: {fileID: 1919672192}
   - component: {fileID: 1919672191}
+  - component: {fileID: 1919672195}
+  - component: {fileID: 1919672194}
   m_Layer: 0
   m_Name: Beam4
   m_TagString: Untagged
@@ -23926,7 +24085,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919672189}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -23939,6 +24098,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919672189}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1919672194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919672189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbd3c6e7b4c3674798f698499adc11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
+  damage: 1
+  chargeBar: {fileID: 0}
+--- !u!54 &1919672195
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919672189}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2045959138
 GameObject:
   m_ObjectHideFlags: 0
@@ -23983,6 +24171,53 @@ MonoBehaviour:
     type: 2}
   poolSize: 100
   dynamicSize: 1
+--- !u!1001 &2052043494
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4816511115647920, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114372377488065410, guid: 34076c97e77414d4b9a031fdd7eda4b1,
+        type: 2}
+      propertyPath: initialHealth
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 34076c97e77414d4b9a031fdd7eda4b1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2077855282
 GameObject:
   m_ObjectHideFlags: 0

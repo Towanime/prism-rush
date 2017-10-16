@@ -18,8 +18,10 @@ public class ChargeBar : MonoBehaviour {
 
 	public int maxCharge;
 	public int abilitySuccess;
-	public Slider slider;
+	public float chargePower;
 
+	public Slider slider;
+	public Hazard hazard;
 
 	void Start () {
 		maxCharge = 100;
@@ -27,10 +29,6 @@ public class ChargeBar : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.LeftControl)) 
-		{
-			slider.value += 10;
-		}
 
 		if (slider.value >= maxCharge) {
 			slider.value = maxCharge;
