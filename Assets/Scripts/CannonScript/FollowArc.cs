@@ -5,13 +5,14 @@ using UnityEngine;
 public class FollowArc : MonoBehaviour {
 
 	Vector3 startPos; // = new Vector3(0, 1, 1.40f);
-	Vector3 endPos = new Vector3(0, 63, 10);
+	Vector3 endPos = new Vector3(0, 63, 0);
 	float height = 4f;
 	bool startThrow = false;
 	float incrementor = 0;
+	private GameObject Player;
 
 	void Start(){
-		startPos = transform.position;
+		startPos = Player.transform.position;
 	}
 
 	// Update is called once per frame
@@ -19,9 +20,11 @@ public class FollowArc : MonoBehaviour {
 	{
 		if (startThrow)
 		{
+			
 			incrementor += 0.04f;
 			Vector3 currentPos = Vector3.Lerp(startPos, endPos, incrementor);
 			currentPos.y += height * Mathf.Sin(Mathf.Clamp01(incrementor) * Mathf.PI);
+			Player.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 100);
 			transform.position = currentPos;
 
 		}
