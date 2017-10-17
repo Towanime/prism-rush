@@ -1069,11 +1069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 565e9b34953cdd749827d4a13789b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectWheelAnim: {fileID: 114448696859485940, guid: 34908bd262f311d419942e4962ea1a58,
-    type: 2}
+  selectWheelAnim: {fileID: 114051400120208666}
   bigXAnim: {fileID: 114815539375526840}
-  ddrStateMachine: {fileID: 114985476494535348, guid: 69461cb2252469a4abbedaa8322a6033,
-    type: 2}
+  ddrStateMachine: {fileID: 0}
   chargeBar: {fileID: 114473673895456366}
   speed: 30
   maxCharge: 0
@@ -1450,17 +1448,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f48f36c8d21a34db36b1ccd92adfbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
+  playerInput: {fileID: 0}
   r1Button: {fileID: 1992085986719098}
   prismPartyText: {fileID: 1251350643323900}
   chargeBar: {fileID: 1606719104421584}
-  prismParty: {fileID: 1756073748651484, guid: e2f5a2b66cf978940af4cdc5a4d03d46, type: 2}
-  selectWheelAnim: {fileID: 114448696859485940, guid: 34908bd262f311d419942e4962ea1a58,
-    type: 2}
+  prismParty: {fileID: 0}
+  selectWheelAnim: {fileID: 114051400120208666}
   bigXAnim: {fileID: 114815539375526840}
-  ddrStateMachine: {fileID: 114985476494535348, guid: 69461cb2252469a4abbedaa8322a6033,
-    type: 2}
+  ddrStateMachine: {fileID: 0}
   timer: {fileID: 114109275014346456}
   maxCharge: 0
   abilitySuccess: 0
@@ -1810,6 +1805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a383a688241de428e78eac8138e01c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateMachine: {fileID: 0}
   startScreenTransition: {fileID: 114741571249906856}
   blackBackground: {fileID: 1324583350066388}
 --- !u!114 &114782020890139088
@@ -2304,7 +2300,7 @@ RectTransform:
   - {fileID: 224671691029015598}
   - {fileID: 224083218714313416}
   m_Father: {fileID: 224217068685934840}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2322,7 +2318,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 224217068685934840}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2458,7 +2454,7 @@ RectTransform:
   - {fileID: 224167583515731902}
   - {fileID: 224337824470468638}
   m_Father: {fileID: 224217068685934840}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2585,10 +2581,10 @@ RectTransform:
   m_Children:
   - {fileID: 224070712763294248}
   - {fileID: 224191119828309612}
-  - {fileID: 224761854289220276}
-  - {fileID: 224042649459912380}
   - {fileID: 224045812422196552}
   - {fileID: 224131703602701104}
+  - {fileID: 224761854289220276}
+  - {fileID: 224042649459912380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2901,7 +2897,7 @@ RectTransform:
   - {fileID: 224300995743089244}
   - {fileID: 224770887355846280}
   m_Father: {fileID: 224217068685934840}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
