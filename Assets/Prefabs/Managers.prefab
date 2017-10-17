@@ -400,12 +400,9 @@ MonoBehaviour:
   startingState: 0
   ddrStateMachine: {fileID: 114985476494535348, guid: 69461cb2252469a4abbedaa8322a6033,
     type: 2}
-  selectionWheelAnim: {fileID: 114448696859485940, guid: 34908bd262f311d419942e4962ea1a58,
-    type: 2}
-  selectionWheelFade: {fileID: 114658263717154528, guid: 1d7486afc659fd243a7b66eaa580bb85,
-    type: 2}
-  comboColors: {fileID: 114514908308609690, guid: de94fb2ad3e641b44967dba8838d9d73,
-    type: 2}
+  selectionWheelAnim: {fileID: 0}
+  selectionWheelFade: {fileID: 0}
+  comboColors: {fileID: 0}
   timer: {fileID: 114332109336507200, guid: 785590393b39f3841be94ff830834412, type: 2}
   selectionGlow: {fileID: 1123368058692830, guid: 27920141cae0bc34eb301d35d22d07b8,
     type: 2}
