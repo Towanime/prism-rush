@@ -9,7 +9,7 @@ public class PlayerStateMachine : MonoBehaviour {
     public GameObject player;
     public PhotonShot photonShot;
     public Flash flash;
-    public PlayerStates startingState = PlayerStates.Default;
+    public PlayerStates startingState = PlayerStates.Inactive;
 
     private StateMachine<PlayerStates> fsm;
     private StateMachine<MovementStates> movementStateMachine;

@@ -94,43 +94,51 @@ public class DDRStateMachine : MonoBehaviour {
 			}
 	}
 		
-	void Active_Enter(){
-
-		if (playerDirections.Count != 0) {
+	void Active_Exit(){
+        //CheckLastInput();
+		/*if (playerDirections.Count != 0) {
 			
 			if (finishedList.ElementAt (0) != playerDirections.ElementAt (0)) {
 				ddrFail = true;
 				timer.slider.value = 0;
 				chargeBar.abilitySuccess = 2;
 				fsm.ChangeState (DDRStates.Inactive);
+                return;
 			} else {
 				checkmark1.SetActive (true);
-			}
-			if (finishedList.ElementAt (1) != playerDirections.ElementAt (1)) {
+                return;
+            }
+			if (playerDirections.Count <= 1 && finishedList.ElementAt (1) != playerDirections.ElementAt (1)) {
 				ddrFail = true;
 				timer.slider.value = 0;
 				chargeBar.abilitySuccess = 2;
 				fsm.ChangeState (DDRStates.Inactive);
-			} else {
+                return;
+            } else {
 				checkmark2.SetActive (true);
-			}
-			if (finishedList.ElementAt (2) != playerDirections.ElementAt (2)) {
+                return;
+            }
+			if (playerDirections.Count <= 2 && finishedList.ElementAt (2) != playerDirections.ElementAt (2)) {
 				ddrFail = true;
 				timer.slider.value = 0;
 				chargeBar.abilitySuccess = 2;
 				fsm.ChangeState (DDRStates.Inactive);
-			} else {
+                return;
+            } else {
 				checkmark3.SetActive (true);
-			}
-			if (finishedList.ElementAt (3) != playerDirections.ElementAt (3)) {
+                return;
+            }
+			if (playerDirections.Count <= 3 && finishedList.ElementAt (3) != playerDirections.ElementAt (3)) {
 				ddrFail = true;
 				timer.slider.value = 0;
 				chargeBar.abilitySuccess = 2;
 				fsm.ChangeState (DDRStates.Inactive);
-			} else {
+                return;
+            } else {
 				checkmark4.SetActive (true);
-			}
-		}
+                return;
+            }
+		}*/
 	}
 
 	void Active_Update(){
@@ -173,7 +181,8 @@ public class DDRStateMachine : MonoBehaviour {
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 1;
 		glowPosition.SelectionGlowSetPosition ();
-		fsm.ChangeState (DDRStates.Active);
+        CheckLastInput();
+        fsm.ChangeState (DDRStates.Active);
 	}
 
 	void Down_Enter(){
@@ -182,7 +191,8 @@ public class DDRStateMachine : MonoBehaviour {
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 4;
 		glowPosition.SelectionGlowSetPosition ();
-		fsm.ChangeState (DDRStates.Active);
+        CheckLastInput();
+        fsm.ChangeState (DDRStates.Active);
 	}
 
 	void Up_Enter(){
@@ -190,7 +200,8 @@ public class DDRStateMachine : MonoBehaviour {
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 2;
 		glowPosition.SelectionGlowSetPosition ();
-		fsm.ChangeState (DDRStates.Active);
+        CheckLastInput();
+        fsm.ChangeState (DDRStates.Active);
 	}
 
 	void Left_Enter(){
@@ -198,7 +209,8 @@ public class DDRStateMachine : MonoBehaviour {
 		selectionGlow.SetActive(true);
 		glowPosition.selectionGlowPosition = 3;
 		glowPosition.SelectionGlowSetPosition ();
-		fsm.ChangeState (DDRStates.Active);
+        CheckLastInput();
+        fsm.ChangeState (DDRStates.Active);
 	}
 
 
@@ -209,4 +221,41 @@ public class DDRStateMachine : MonoBehaviour {
 		}
 		return true;
 	}
+
+    private void CheckLastInput()
+    {
+        if(playerDirections.Count == 0)
+        {
+            return;
+        }
+        // get index of last input
+        int playerIndex = playerDirections.Count - 1;
+        // compare inputs depending of the index
+        if (finishedList[playerIndex] != playerDirections[playerIndex])
+        {
+            ddrFail = true;
+            timer.slider.value = 0;
+            chargeBar.abilitySuccess = 2;
+            fsm.ChangeState(DDRStates.Inactive);
+        }
+        else
+        {
+            // sucess then show the correct checkmark
+            switch (playerIndex)
+            {
+                case 0:
+                    checkmark1.SetActive(true);
+                    break;
+                case 1:
+                    checkmark2.SetActive(true);
+                    break;
+                case 2:
+                    checkmark3.SetActive(true);
+                    break;
+                case 3:
+                    checkmark4.SetActive(true);
+                    break;
+            }
+        }
+    }
 }

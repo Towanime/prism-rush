@@ -291,8 +291,7 @@ MonoBehaviour:
   selectGlowAnim: {fileID: 114315589853795118, guid: 27920141cae0bc34eb301d35d22d07b8,
     type: 2}
   bigXAnim: {fileID: 114841084979921070, guid: d1758eb585d39f646b305f6ab626cb37, type: 2}
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
+  playerInput: {fileID: 114352141087695312}
   chargeBar: {fileID: 114788704407470000, guid: 785590393b39f3841be94ff830834412,
     type: 2}
   colorAssigner: {fileID: 114248113743566898, guid: de94fb2ad3e641b44967dba8838d9d73,
@@ -314,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 114352141087695312}
   playerStateMachine: {fileID: 114275702158692740}
+  startingState: 0
 --- !u!114 &114275702158692740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,13 +325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cce7f376bbc805478023968dfd5a523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
-  player: {fileID: 1681151156486340, guid: e4a96585bbee5094bb64ba23fca764df, type: 2}
-  photonShot: {fileID: 114805392039204258, guid: e4a96585bbee5094bb64ba23fca764df,
-    type: 2}
-  flash: {fileID: 114942511539332290, guid: e4a96585bbee5094bb64ba23fca764df, type: 2}
-  startingState: 2
+  playerInput: {fileID: 114352141087695312}
+  player: {fileID: 0}
+  photonShot: {fileID: 0}
+  flash: {fileID: 0}
+  startingState: 0
 --- !u!114 &114352141087695312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,10 +358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82255f0b3d43d4149b8c2ab6f4df98b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
-  playerController: {fileID: 114292520827630440, guid: e4a96585bbee5094bb64ba23fca764df,
-    type: 2}
+  playerInput: {fileID: 114352141087695312}
+  playerController: {fileID: 0}
 --- !u!114 &114829299380378770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,8 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f810a923a2d40846939bf898da973c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
+  playerInput: {fileID: 114352141087695312}
   startingState: 0
   ddrStateMachine: {fileID: 114985476494535348, guid: 69461cb2252469a4abbedaa8322a6033,
     type: 2}
@@ -404,14 +399,10 @@ MonoBehaviour:
   selectionWheelFade: {fileID: 0}
   comboColors: {fileID: 0}
   timer: {fileID: 114332109336507200, guid: 785590393b39f3841be94ff830834412, type: 2}
-  selectionGlow: {fileID: 1123368058692830, guid: 27920141cae0bc34eb301d35d22d07b8,
-    type: 2}
-  selectionWheel: {fileID: 1083433496474424, guid: 34908bd262f311d419942e4962ea1a58,
-    type: 2}
-  selectionFade: {fileID: 1291725077419260, guid: 1d7486afc659fd243a7b66eaa580bb85,
-    type: 2}
-  comboColorAnim: {fileID: 1230873695074404, guid: de94fb2ad3e641b44967dba8838d9d73,
-    type: 2}
+  selectionGlow: {fileID: 0}
+  selectionWheel: {fileID: 0}
+  selectionFade: {fileID: 0}
+  comboColorAnim: {fileID: 0}
   chargeBar: {fileID: 1639470085083982, guid: b3107b73674827a44ab5e743212f0be8, type: 2}
   bigX: {fileID: 1054846786542738, guid: d1758eb585d39f646b305f6ab626cb37, type: 2}
   slider: {fileID: 114049282136899176, guid: b3107b73674827a44ab5e743212f0be8, type: 2}
@@ -427,7 +418,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db7a2b0a15c282448c88cff3ffc00c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
-    type: 2}
-  playerController: {fileID: 114292520827630440, guid: e4a96585bbee5094bb64ba23fca764df,
-    type: 2}
+  playerInput: {fileID: 114352141087695312}
+  playerController: {fileID: 0}

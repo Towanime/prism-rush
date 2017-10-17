@@ -7,6 +7,7 @@ public class GameStateMachine : MonoBehaviour {
 
     public PlayerInput playerInput;
     public PlayerStateMachine playerStateMachine;
+    public GameStates startingState = GameStates.StartScreen;
 
     private GameObject player;
     private bool initialized;
@@ -20,7 +21,7 @@ public class GameStateMachine : MonoBehaviour {
     void Init()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        fsm = StateMachine<GameStates>.Initialize(this, GameStates.Running);
+        fsm = StateMachine<GameStates>.Initialize(this, startingState);
         initialized = true;
     }
 
@@ -31,5 +32,22 @@ public class GameStateMachine : MonoBehaviour {
 
     void Running_Update()
     {
+    }
+
+    void StartScreen_Enter()
+    {
+        playerStateMachine.FSM.ChangeState(PlayerStates.Inactive);
+    }
+
+    public StateMachine<GameStates> FSM
+    {
+        get
+        {
+            if (!initialized)
+            {
+                Init();
+            }
+            return fsm;
+        }
     }
 }

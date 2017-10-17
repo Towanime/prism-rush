@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameStates {
-
+    StartScreen,
     Running,
     GameOverSequence,
     GameOverScreen
