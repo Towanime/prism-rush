@@ -8,6 +8,8 @@ public class EnvHazard : MonoBehaviour {
 
 	private int score;
 
+	public int damageAmount;
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -15,7 +17,7 @@ public class EnvHazard : MonoBehaviour {
 	}
 	void OnTriggerStay () {
 		//DO SOME DAMAGE
-		score -= 5;
+		score -= damageAmount;
 		Debug.Log (score);
 	}
 
