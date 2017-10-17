@@ -1025,7 +1025,19 @@ Prefab:
     - target: {fileID: 114463264728757780, guid: 8eac3ef095fa97a4e858bb8daf5780a4,
         type: 2}
       propertyPath: moveSpeed
-      value: 6
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685678047827264, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685678047827264, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685678047827264, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
