@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114565657483852402}
   - component: {fileID: 96293636375182414}
   - component: {fileID: 198339540873152826}
+  - component: {fileID: 114678621587977990}
   - component: {fileID: 199805486696496680}
   m_Layer: 0
   m_Name: BensonBullet
@@ -76,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452457907500566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.89, y: 80.3, z: 0}
+  m_LocalPosition: {x: -35.4, y: 63, z: 6.1}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4776042780878998}
@@ -103,7 +104,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791800046815956}
-  m_LocalRotation: {x: -0.64085644, y: 0.29883623, z: 0.29883623, w: 0.64085644}
+  m_LocalRotation: {x: 0.5691225, y: -0.41964224, z: -0.41964224, w: -0.5691225}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -116,7 +117,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452457907500566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -171,7 +172,7 @@ TrailRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452457907500566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1
@@ -291,8 +292,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 1452457907500566}
   radius: 10
-  power: 10
+  power: 1
   upforce: 1
+--- !u!114 &114678621587977990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452457907500566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63577614f288949b5bc40750dd771911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114901747001192566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,7 +387,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 40264296
+  randomSeed: -1128503175
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3636,7 +3648,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1840893282
+  randomSeed: 1131436491
   InitialModule:
     serializedVersion: 3
     enabled: 1
