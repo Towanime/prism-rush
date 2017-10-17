@@ -20,7 +20,6 @@ public class FlashHazard : MonoBehaviour
         if (healthComponent)
         {
             healthComponent.OnDamage(gameObject, damage);
-            Debug.Log("Damaged! -" + damage);
         }
     }
 }

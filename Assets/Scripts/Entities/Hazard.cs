@@ -11,6 +11,12 @@ public class Hazard : MonoBehaviour
     public bool isActive = true;
     [Tooltip("Damage to apply.")]
     public float damage;
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     
     /// <summary>
     /// Does damage to the given object only if the component is enabled 
@@ -18,7 +24,7 @@ public class Hazard : MonoBehaviour
     /// </summary>
     /// <param name="obj">Object to apply damage to.</param>
     /// <returns>True if the object received any damage.</returns>
-    protected bool DoDamage(GameObject obj)
+    protected virtual bool DoDamage(GameObject obj)
     {
         if (isActive)
         {
@@ -27,6 +33,12 @@ public class Hazard : MonoBehaviour
             Health healthComponent = obj.GetComponent<Health>();
             if (healthComponent)
             {
+                // if it's an enemy send damage message to player
+                if (obj.layer == LayerMask.NameToLayer("Enemies"))
+                {
+                    player.SendMessage("OnEnemyDamage");
+                }
+                // send damage message for the player
                 return healthComponent.OnDamage(gameObject, damage);
             }
         }

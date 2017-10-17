@@ -9,15 +9,17 @@ public class ChargeBar : MonoBehaviour {
 	public GameObject r1Button;
 	public GameObject prismPartyText;
 	public GameObject chargeBar;
+	public GameObject prismParty;
 
 	public SelectionWheelAnimationController selectWheelAnim;
 	public SelectionWheelAnimationController bigXAnim;
 	public DDRStateMachine ddrStateMachine;
+	public Timer timer;
 
 	public int maxCharge;
-	public int abilitySuccess = 0;
-	private Slider slider;
+	public int abilitySuccess;
 
+	public Slider slider;
 
 	void Start () {
 		maxCharge = 100;
@@ -25,10 +27,6 @@ public class ChargeBar : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.LeftControl)) 
-		{
-			slider.value += 10;
-		}
 
 		if (slider.value >= maxCharge) {
 			slider.value = maxCharge;
@@ -46,17 +44,22 @@ public class ChargeBar : MonoBehaviour {
 
 			if (abilitySuccess == 1) 
 			{
-				slider.value -= 100;
-				Debug.Log (abilitySuccess);
-				abilitySuccess = 0;
+				Debug.Log ("Pass");
+				timer.timerOn = false;
+				timer.timesUp = false;
+				timer.slider.value += 100;
+				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
-
+				prismParty.SetActive (true);
+				abilitySuccess = 0;
 			}
 
 			if (abilitySuccess == 2 && bigXAnim.animEnd == true) {
-				Debug.Log ("sads");
+				Debug.Log ("Fail");
+				ddrStateMachine.ddrFail = false;
 				ddrStateMachine.ddrActive = false;
-				slider.value -= 70;
+				prismParty.SetActive (false);
+				slider.value = 30;
 				abilitySuccess = 0;
 				bigXAnim.animEnd = false;
 			}

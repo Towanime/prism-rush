@@ -40,7 +40,7 @@ public class MovementStateMachine : MonoBehaviour {
         get {
             if (fsm == null)
             {
-                fsm = StateMachine<MovementStates>.Initialize(this, MovementStates.Default);
+                fsm = StateMachine<MovementStates>.Initialize(this, MovementStates.Disabled);
             }
             return fsm;
         }

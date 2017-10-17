@@ -7,13 +7,12 @@ using MonsterLove.StateMachine;
 public class SelectionWheelStateMachine : MonoBehaviour {
 
 	public PlayerInput playerInput;
-
 	public WheelStates startingState = WheelStates.Default;
 	public DDRStateMachine ddrStateMachine;
-
 	public SelectionWheelAnimationController selectionWheelAnim;
 	public SelectionWheelAnimationController selectionWheelFade;
 	public SelectionWheelAnimationController comboColors;
+	public Timer timer;
 
 	public GameObject selectionGlow;
 	public GameObject selectionWheel;
@@ -76,6 +75,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		comboColorAnim.GetComponent<Animator> ().speed = 1;
 
 		selectionGlow.SetActive(false);
+		timer.timerOn = true;
 	}
 
 	void Selecting_Update ()
@@ -99,7 +99,6 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			comboColors.animPause == true &&
 			ddrStateMachine.ddrActive == false)
 		{
-
 			selectionWheel.GetComponent<Animator> ().SetInteger ("Select Wheel Toggle", 1);
 			selectionWheel.GetComponent<Animator> ().speed = 1;
 
@@ -128,6 +127,8 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 			comboColors.animEnd = false;
 
 			bigX.SetActive (false);
+
+			ddrStateMachine.ddrFail = false;
 
 			Cursor.lockState = CursorLockMode.None;
 			fsm.ChangeState (WheelStates.Default);
