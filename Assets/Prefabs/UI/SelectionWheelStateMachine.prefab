@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1957121993874474}
+  m_IsPrefabParent: 1
+--- !u!1 &1957121993874474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4985871083995828}
+  - component: {fileID: 114827868775352064}
+  m_Layer: 0
+  m_Name: SelectionWheelStateMachine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4985871083995828
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957121993874474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114827868775352064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957121993874474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f810a923a2d40846939bf898da973c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 114610423117591716, guid: d375518bafc91214d9e25ca8c266ed57,
+    type: 2}
+  startingState: 0
+  ddrStateMachine: {fileID: 114985476494535348, guid: 69461cb2252469a4abbedaa8322a6033,
+    type: 2}
+  selectionWheelAnim: {fileID: 114448696859485940, guid: 34908bd262f311d419942e4962ea1a58,
+    type: 2}
+  selectionWheelFade: {fileID: 114658263717154528, guid: 1d7486afc659fd243a7b66eaa580bb85,
+    type: 2}
+  comboColors: {fileID: 114514908308609690, guid: de94fb2ad3e641b44967dba8838d9d73,
+    type: 2}
+  timer: {fileID: 114332109336507200, guid: 785590393b39f3841be94ff830834412, type: 2}
+  selectionGlow: {fileID: 1123368058692830, guid: 27920141cae0bc34eb301d35d22d07b8,
+    type: 2}
+  selectionWheel: {fileID: 1083433496474424, guid: 34908bd262f311d419942e4962ea1a58,
+    type: 2}
+  selectionFade: {fileID: 1291725077419260, guid: 1d7486afc659fd243a7b66eaa580bb85,
+    type: 2}
+  comboColorAnim: {fileID: 1230873695074404, guid: de94fb2ad3e641b44967dba8838d9d73,
+    type: 2}
+  chargeBar: {fileID: 1639470085083982, guid: b3107b73674827a44ab5e743212f0be8, type: 2}
+  bigX: {fileID: 1054846786542738, guid: d1758eb585d39f646b305f6ab626cb37, type: 2}
+  slider: {fileID: 114049282136899176, guid: b3107b73674827a44ab5e743212f0be8, type: 2}
+  cursorTexture: {fileID: 2800000, guid: ba507a33983124b4c8c8a1c880744724, type: 3}
