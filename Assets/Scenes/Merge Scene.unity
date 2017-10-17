@@ -287,6 +287,11 @@ Prefab:
       propertyPath: ddrStateMachine
       value: 
       objectReference: {fileID: 367474232}
+    - target: {fileID: 114885676556081022, guid: 52825e9dc5ded634185e96357ebab2a0,
+        type: 2}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 720039035}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52825e9dc5ded634185e96357ebab2a0, type: 2}
   m_IsPrefabParent: 0
@@ -668,6 +673,11 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114109275014346456, guid: 2e57eff66ae2d2f40be319938901a37f,
+        type: 2}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1570346785}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e57eff66ae2d2f40be319938901a37f, type: 2}
   m_IsPrefabParent: 0
@@ -889,6 +899,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 741885160}
   m_Script: {fileID: 11500000, guid: 465a5d9aa0cfb5140a148d3541684435, type: 3}
+--- !u!114 &1570346785 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114011555424298928, guid: 2e57eff66ae2d2f40be319938901a37f,
+    type: 2}
+  m_PrefabInternal: {fileID: 741885160}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1735376022 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1599322255534678, guid: 2e57eff66ae2d2f40be319938901a37f,
