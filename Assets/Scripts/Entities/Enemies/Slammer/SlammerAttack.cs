@@ -18,7 +18,6 @@ public class SlammerAttack : MonoBehaviour {
 		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit)) {
 			if (hit.collider.tag == "Player") {
 				anim.SetBool ("PlayerUnder", true);
-				Debug.Log ("Slam Attack!");
 			} else {
 				anim.SetBool ("PlayerUnder", false);
 			}
