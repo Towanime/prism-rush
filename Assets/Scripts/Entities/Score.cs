@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     [Tooltip("True to make this entity ignore any damage.")]
     public bool ignoreDamage = false;
     // current hp
-    protected int currentScore;
+    public int currentScore;
 
     void Start()
     {
