@@ -13,25 +13,26 @@ public class SlammerCollider : MonoBehaviour {
 	public float stunTime;
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		score = player.GetComponent<Score>();
+		player = GameObject.FindGameObjectWithTag ("Player"); //Fine the GameObject tagged "Player" and assign it to the player var
+		score = player.GetComponent<Score>(); //Grab the Score component from player and assign it to the score var
 	} 
 
 	void OnTriggerEnter (Collider other) {
+		//If the "other" is tagged "Player", affect the score based on the damageAmount var and run the StunPlayer coroutine
 		if (other.tag == "Player") {
 			Debug.Log ("Player Stunned!");
 			score.CurrentScore -= damageAmount;
 			StartCoroutine (StunPlayer());
 			Debug.Log(score.CurrentScore);
 		} else {
-			 //Stun the slammer
+			 //TO DO: STUN THE SLAMMER
 		}
 	}
 
 	IEnumerator StunPlayer () {
 		yield return null; //Wait a frame
-		moveSM.playerInput.enabled = false;
+		moveSM.playerInput.enabled = false; //Disable the MovementStateMachine player Input
 		yield return new WaitForSeconds (stunTime); //Wait stunTime seconds
-		moveSM.playerInput.enabled = true;
+		moveSM.playerInput.enabled = true; //Enable the MovementStateMachine player Input
 	}
 }

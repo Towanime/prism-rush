@@ -22,19 +22,16 @@ public class PrismPickup : MonoBehaviour {
 	private Vector3 posOffest = new Vector3 ();
 	private Vector3 tempPos = new Vector3 ();
 
-	// Use this for initialization
 	void Start () {
-		//Store the starting position & rotation of the object
-		posOffest = transform.position;
+		posOffest = transform.position; //Store the starting position & rotation of the object
 		
-		player = GameObject.FindGameObjectWithTag ("Player");
-		score = player.GetComponent<Score>();
+		player = GameObject.FindGameObjectWithTag ("Player"); //Fine the GameObject tagged "Player" and assign it to the player var
+		score = player.GetComponent<Score>(); //Grab the Score component from player and assign it to the score var
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Spin object on Y axis
-		transform.Rotate (new Vector3 (0, rotationSpeed * Time.deltaTime, 0));
+		transform.Rotate (new Vector3 (0, rotationSpeed * Time.deltaTime, 0)); //Spin object on Y axis
 
 		//Float up and down with a Sin()
 		tempPos = posOffest;
@@ -44,7 +41,7 @@ public class PrismPickup : MonoBehaviour {
 
 	//Use for when the Player enters the trigger of the Prism
 	void OnTriggerEnter (Collider other) {
-		//If the other object is tagged as "Player", deactivate the collectible
+		//If the other object is tagged as "Player", instantiate the particle, deactivate the collectible, and add to the score
 		if(other.gameObject.CompareTag ("Player")) {
 			Instantiate (particlePrefab, this.transform.position, Quaternion.Euler (90, 0, 0));
 			this.gameObject.SetActive (false);
