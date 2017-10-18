@@ -365,10 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScreen: {fileID: 1478169827378562}
-  gameoverScreen: {fileID: 0}
-  gameoverScreenPrefab: {fileID: 1005729253686250, guid: f534451c082c6fb4381795c37b2d1523,
-    type: 2}
-  canvas: {fileID: 0}
+  startScreenTransition: {fileID: 0}
 --- !u!114 &114678075558710944
 MonoBehaviour:
   m_ObjectHideFlags: 1

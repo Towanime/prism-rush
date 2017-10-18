@@ -16,7 +16,6 @@ public class StartScreenButton : MonoBehaviour, IPointerDownHandler // required 
 	}
 
 	public void animEnd(){
-		blackBackground.GetComponent<Animator> ().enabled = true;
         gameStateMachine.FSM.ChangeState(GameStates.Running);
     }
 }
