@@ -5,9 +5,12 @@ using UnityEngine;
 public class PrismPickup : MonoBehaviour {
 
 	public GameObject particlePrefab;
+
+	private GameObject player;
+	private Score score;
 	
 	//Score and size values
-	public float scoreValue = 100;
+	public int scoreValue = 100;
 	public float sizeMultiplier = 1;
 
 	//Movement and "juice"
@@ -23,6 +26,9 @@ public class PrismPickup : MonoBehaviour {
 	void Start () {
 		//Store the starting position & rotation of the object
 		posOffest = transform.position;
+		
+		player = GameObject.FindGameObjectWithTag ("Player");
+		score = player.GetComponent<Score>();
 	}
 	
 	// Update is called once per frame
@@ -42,6 +48,8 @@ public class PrismPickup : MonoBehaviour {
 		if(other.gameObject.CompareTag ("Player")) {
 			Instantiate (particlePrefab, this.transform.position, Quaternion.Euler (90, 0, 0));
 			this.gameObject.SetActive (false);
+			score.CurrentScore += scoreValue;
+			Debug.Log (score.CurrentScore);
 		}
 	}
 }

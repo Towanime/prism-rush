@@ -5,25 +5,24 @@ using UnityEngine;
 public class SlammerCollider : MonoBehaviour {
 
 	private GameObject player;
+	public MovementStateMachine moveSM;
 
-	private int score;
-
-	public int health;
+	private Score score;
 
 	public int damageAmount;
 	public float stunTime;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		score = player.GetComponent<Score>().CurrentScore;
+		score = player.GetComponent<Score>();
 	} 
 
 	void OnTriggerEnter (Collider other) {
 		if (other.tag == "Player") {
 			Debug.Log ("Player Stunned!");
-			score -= damageAmount;
+			score.CurrentScore -= damageAmount;
 			StartCoroutine (StunPlayer());
-			Debug.Log(score);
+			Debug.Log(score.CurrentScore);
 		} else {
 			 //Stun the slammer
 		}
@@ -31,8 +30,8 @@ public class SlammerCollider : MonoBehaviour {
 
 	IEnumerator StunPlayer () {
 		yield return null; //Wait a frame
-		player.GetComponent<PlayerController>().enabled = false; //Grab the player's Player Controller and disable it
+		moveSM.playerInput.enabled = false;
 		yield return new WaitForSeconds (stunTime); //Wait stunTime seconds
-		player.GetComponent<PlayerController>().enabled = true; //Grab the player's Player Controller and enable it
+		moveSM.playerInput.enabled = true;
 	}
 }
