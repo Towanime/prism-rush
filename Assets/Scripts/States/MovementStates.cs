@@ -3,5 +3,6 @@ public enum MovementStates {
 
     Default,
     MovementDisabled,
-    Disabled
+    Disabled,
+    Knockback
 }

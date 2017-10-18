@@ -6,6 +6,7 @@ using MonsterLove.StateMachine;
 public class MovementStateMachine : MonoBehaviour {
     public PlayerInput playerInput;
     public PlayerController playerController;
+    public Vector3 knockbackDireccion;
 
     private StateMachine<MovementStates> fsm;
 
@@ -19,6 +20,16 @@ public class MovementStateMachine : MonoBehaviour {
     }
 
     void Default_FixedUpdate()
+    {
+        playerController.MoveUpdate();
+    }
+
+    void Knockback_Update()
+    {
+        playerController.Move(knockbackDireccion);
+    }
+
+    void Knockback_FixedUpdate()
     {
         playerController.MoveUpdate();
     }
