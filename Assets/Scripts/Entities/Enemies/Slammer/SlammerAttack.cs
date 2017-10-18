@@ -14,7 +14,7 @@ public class SlammerAttack : MonoBehaviour {
 		RaycastHit hit;
 
 		//Cast a sphere downwards, if it hits a collider tagged "player", play the attack animation
-		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit, Mathf.Infinity)) {
+		if (Physics.SphereCast (this.transform.position, 2.5f, Vector3.down, out hit, Mathf.Infinity)) {
 			if (hit.collider.tag == "Player") {
 				anim.SetBool ("PlayerUnder", true);
 			} else {
