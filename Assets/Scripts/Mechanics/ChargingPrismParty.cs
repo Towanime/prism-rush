@@ -6,9 +6,13 @@ public class ChargingPrismParty : MonoBehaviour {
 
 	public float chargePower;
 	public ChargeBar chargeBar;
+    public GameObject prismParty;
 
 	public void OnEnemyDamage()
 	{
-		chargeBar.slider.value += chargePower;
+        if (prismParty.activeInHierarchy == false)
+        {
+            chargeBar.slider.value += chargePower;
+        }
 	}
 }

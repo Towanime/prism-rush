@@ -9,6 +9,7 @@ public class DDRStateMachine : MonoBehaviour {
 	
 	public bool ddrActive;
 	public bool ddrFail;
+    public bool checkingLists;
 
 	public GameObject selectionGlow;
 	public GameObject checkmark1;
@@ -159,7 +160,7 @@ public class DDRStateMachine : MonoBehaviour {
 
 			fsm.ChangeState (DDRStates.Inactive);
 			}
-		if(ddrFail == false){	
+		if(ddrFail == false && checkingLists == false){	
 			if (Input.GetKeyDown(playerInput.config.up)) {
 				fsm.ChangeState (DDRStates.Up);
 			}
@@ -224,7 +225,9 @@ public class DDRStateMachine : MonoBehaviour {
 
     private void CheckLastInput()
     {
-        if(playerDirections.Count == 0)
+        checkingLists = true;
+
+        if (playerDirections.Count == 0)
         {
             return;
         }
@@ -236,6 +239,7 @@ public class DDRStateMachine : MonoBehaviour {
             ddrFail = true;
             timer.slider.value = 0;
             chargeBar.abilitySuccess = 2;
+            checkingLists = false;
             fsm.ChangeState(DDRStates.Inactive);
         }
         else
@@ -244,15 +248,19 @@ public class DDRStateMachine : MonoBehaviour {
             switch (playerIndex)
             {
                 case 0:
+                    checkingLists = false;
                     checkmark1.SetActive(true);
                     break;
                 case 1:
+                    checkingLists = false;
                     checkmark2.SetActive(true);
                     break;
                 case 2:
+                    checkingLists = false;
                     checkmark3.SetActive(true);
                     break;
                 case 3:
+                    checkingLists = false;
                     checkmark4.SetActive(true);
                     break;
             }

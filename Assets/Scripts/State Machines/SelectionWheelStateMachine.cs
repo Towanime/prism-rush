@@ -57,6 +57,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 	{
 		if (playerInput.selectionWheel && slider.value == 100) 
 		{
+            Debug.Log("fsdf");
 			chargeBar.SetActive (false);
 			ddrStateMachine.ddrActive = true;
 			fsm.ChangeState (WheelStates.Selecting);
@@ -142,7 +143,7 @@ public class SelectionWheelStateMachine : MonoBehaviour {
 		selectionFade.GetComponent<Animator> ().SetInteger ("Select Fade State", 0);
 
 		comboColorAnim.GetComponent<Animator> ().SetInteger ("Combo Colors Toggle", 0);
-
+        Debug.Log("Dasd");
 		chargeBar.SetActive (true);
 	}
 }

@@ -15,7 +15,7 @@ public class PrismParty : MonoBehaviour {
 		if (chargeBar.slider.value <= 0) {
 			chargeBar.slider.value = 0;
 			prismParty.SetActive (false);
-		} else {
+        } else {
 			chargeBar.slider.value -= speed * Time.deltaTime;
 			chargeBar.r1Button.SetActive (false);
 			chargeBar.prismPartyText.SetActive (false);

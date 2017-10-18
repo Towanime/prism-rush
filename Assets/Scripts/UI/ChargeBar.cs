@@ -33,7 +33,10 @@ public class ChargeBar : MonoBehaviour {
 			if (selectWheelAnim.animPause == false) {
 				r1Button.SetActive (true);
 				prismPartyText.SetActive (true);
-				chargeBar.SetActive (false);
+                if (prismParty.activeInHierarchy == false)
+                {
+                    chargeBar.SetActive(false);
+                }
 			}
 		}
 
