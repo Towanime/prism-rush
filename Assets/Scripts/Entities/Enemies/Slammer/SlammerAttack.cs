@@ -6,16 +6,15 @@ public class SlammerAttack : MonoBehaviour {
 
 	private Animator anim;
 
-	// Use this for initialization
 	void Start () {
 		anim = GetComponentInChildren<Animator>();
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate () {
 		RaycastHit hit;
 
-		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit)) {
+		//Cast a sphere downwards, if it hits a collider tagged "player", play the attack animation
+		if (Physics.SphereCast (this.transform.position, 1.0f, Vector3.down, out hit, Mathf.Infinity)) {
 			if (hit.collider.tag == "Player") {
 				anim.SetBool ("PlayerUnder", true);
 			} else {

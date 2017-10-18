@@ -241,47 +241,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59279370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &69074335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 69074336}
-  - component: {fileID: 69074337}
-  m_Layer: 0
-  m_Name: EnvStateMachine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &69074336
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69074335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 757710034}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &69074337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 69074335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc25153d5e2cda4ab090333804edec1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  envHazard: {fileID: 824290684}
 --- !u!1 &157182251
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +804,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4623049202875502, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 4623049202875502, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -884,7 +843,7 @@ Prefab:
     - target: {fileID: 114446323141027208, guid: 8eac3ef095fa97a4e858bb8daf5780a4,
         type: 2}
       propertyPath: stunTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114446323141027208, guid: 8eac3ef095fa97a4e858bb8daf5780a4,
         type: 2}
@@ -903,7 +862,12 @@ Prefab:
       objectReference: {fileID: 1631693883}
     - target: {fileID: 4685678047827264, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.31
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 65224700293964782, guid: 8eac3ef095fa97a4e858bb8daf5780a4,
+        type: 2}
+      propertyPath: m_Center.x
+      value: 2.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8eac3ef095fa97a4e858bb8daf5780a4, type: 2}
@@ -1246,11 +1210,6 @@ Transform:
   m_Father: {fileID: 771463252}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &757710034 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4513212090467608, guid: 52825e9dc5ded634185e96357ebab2a0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1668006513}
 --- !u!1 &771463251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1249,7 @@ Transform:
   - {fileID: 458523153}
   - {fileID: 250849717}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824290684 stripped
 GameObject:
@@ -2308,15 +2267,11 @@ Prefab:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 204688095}
-    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
+    - target: {fileID: 114747412855624986, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
-      propertyPath: startingState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790882202667338, guid: 52825e9dc5ded634185e96357ebab2a0, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: envHazard
+      value: 
+      objectReference: {fileID: 824290684}
     - target: {fileID: 114183772431695810, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
       propertyPath: startingState
@@ -2668,7 +2623,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4775560780735298, guid: 96112597c8585e44795ec50bc1ff5d09, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96112597c8585e44795ec50bc1ff5d09, type: 2}
