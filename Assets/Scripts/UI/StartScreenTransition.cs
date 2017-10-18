@@ -18,6 +18,13 @@ public class StartScreenTransition : MonoBehaviour {
 			startButton.GetComponent<Animator> ().SetBool ("animEnd", true);
 			startText.GetComponent<Animator> ().SetBool ("animEnd", true);
 			titleText.GetComponent<Animator> ().SetBool ("animEnd", true);
+			blackBackground.GetComponent<Animator> ().SetBool ("AnimEnd", true);
+		} else {
+			background.GetComponent<Animator> ().SetBool ("animEnd", false);
+			startButton.GetComponent<Animator> ().SetBool ("animEnd", false);
+			startText.GetComponent<Animator> ().SetBool ("animEnd", false);
+			titleText.GetComponent<Animator> ().SetBool ("animEnd", false);
+			blackBackground.GetComponent<Animator> ().SetBool ("AnimEnd", false);
 		}
 	}
 }

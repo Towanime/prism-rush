@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150828614322586}
   - component: {fileID: 114279497989986464}
+  - component: {fileID: 114112425809590498}
   m_Layer: 0
   m_Name: StateMachines
   m_TagString: Untagged
@@ -86,6 +87,7 @@ GameObject:
   - component: {fileID: 114563793823400510}
   - component: {fileID: 114418146429824956}
   - component: {fileID: 114691459658772312}
+  - component: {fileID: 114336700708564612}
   m_Layer: 0
   m_Name: PlayerStateMachines
   m_TagString: Untagged
@@ -162,6 +164,17 @@ Transform:
   m_Father: {fileID: 4150828614322586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114112425809590498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730386489474872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2a0c63ef281b44a823365c3d5bffcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114279497989986464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,6 +189,17 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   playerStateMachine: {fileID: 114563793823400510}
   startingState: 0
+--- !u!114 &114336700708564612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855374499464192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2a0c63ef281b44a823365c3d5bffcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114418146429824956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ddrActive: 0
   ddrFail: 0
+  checkingLists: 0
   selectionGlow: {fileID: 0}
   checkmark1: {fileID: 0}
   checkmark2: {fileID: 0}
