@@ -305,8 +305,7 @@ Prefab:
         type: 2}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: f5fc7f11a206f514aaff3eadbb32bc1a,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52825e9dc5ded634185e96357ebab2a0, type: 2}
   m_IsPrefabParent: 0
@@ -4636,8 +4635,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1236584125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 3.5, z: -13.44}
-  m_LocalScale: {x: 101.3912, y: 7.8861423, z: 96.67783}
+  m_LocalPosition: {x: -13, y: 1, z: -13.44}
+  m_LocalScale: {x: 101.3912, y: 2.3408246, z: 96.67783}
   m_Children: []
   m_Father: {fileID: 1601744246}
   m_RootOrder: 1
