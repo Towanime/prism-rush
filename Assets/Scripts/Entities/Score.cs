@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public MovementStateMachine movementStateMachine;
     [Tooltip("Initial score points for this entity.")]
     public int initialScore;
     [Tooltip("Current score points for this entity.")]
@@ -23,6 +22,8 @@ public class Score : MonoBehaviour
     [Tooltip("Renderers that will be enabled/disabled when flickering.")]
     public List<Renderer> renderersForFlicker;
     // flickering variables
+	public GameObject gameoverScreen;
+
     private bool renderingEnabled;
     private float elapsedKnockbackTime;
     private float elapsedInvulnerableTime;
@@ -44,7 +45,6 @@ public class Score : MonoBehaviour
             UpdateInvulnerable();
             if (finished)
             {
-                movementStateMachine.StateMachine.ChangeState(MovementStates.Default);
                 onKnockback = false;
                 ignoreDamage = false;
             }
@@ -90,7 +90,8 @@ public class Score : MonoBehaviour
     /// </summary>
     protected virtual void OnDeath()
     {
-        Debug.Log("Player Dead");
+		gameoverScreen.SetActive (true);
+
         //Destroy(gameObject);
     }
 
