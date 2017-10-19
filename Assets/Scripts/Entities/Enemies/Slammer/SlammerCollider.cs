@@ -25,14 +25,18 @@ public class SlammerCollider : MonoBehaviour {
 			StartCoroutine (StunPlayer());
 			Debug.Log(score.CurrentScore);
 		} else {
-			 //TO DO: STUN THE SLAMMER
+			 GetComponent<Animation>().Play ("SlamStun");
 		}
 	}
 
 	IEnumerator StunPlayer () {
 		yield return null; //Wait a frame
-		moveSM.playerInput.enabled = false; //Disable the MovementStateMachine player Input
+		moveSM.playerInput.enabled = false; //Disable the MovementStateMachine player input
 		yield return new WaitForSeconds (stunTime); //Wait stunTime seconds
-		moveSM.playerInput.enabled = true; //Enable the MovementStateMachine player Input
+		moveSM.playerInput.enabled = true; //Enable the MovementStateMachine player input
+	}
+
+	void OnDestroy () {
+		moveSM.playerInput.enabled = true; //Fallback in case the player kills the Slammer while she is stunned
 	}
 }

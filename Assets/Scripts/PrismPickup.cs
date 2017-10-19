@@ -6,6 +6,8 @@ public class PrismPickup : MonoBehaviour {
 
 	public GameObject particlePrefab;
 
+	public LayerMask ignoreSelf;
+
 	private GameObject player;
 	private Score score;
 	
@@ -24,6 +26,12 @@ public class PrismPickup : MonoBehaviour {
 
 	void Start () {
 		posOffest = transform.position; //Store the starting position & rotation of the object
+
+		RaycastHit hit;
+
+		if (Physics.Raycast (this.gameObject.transform.position, Vector3.down, out hit, 10.0f, ignoreSelf)) {
+			this.gameObject.transform.position = hit.point;
+		}
 		
 		player = GameObject.FindGameObjectWithTag ("Player"); //Fine the GameObject tagged "Player" and assign it to the player var
 		score = player.GetComponent<Score>(); //Grab the Score component from player and assign it to the score var
@@ -44,7 +52,7 @@ public class PrismPickup : MonoBehaviour {
 		//If the other object is tagged as "Player", instantiate the particle, deactivate the collectible, and add to the score
 		if(other.gameObject.CompareTag ("Player")) {
 			Instantiate (particlePrefab, this.transform.position, Quaternion.Euler (90, 0, 0));
-			this.gameObject.SetActive (false);
+			Destroy (this.gameObject);
 			score.CurrentScore += scoreValue;
 			Debug.Log (score.CurrentScore);
 		}
