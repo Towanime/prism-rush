@@ -22,6 +22,8 @@ public class Score : MonoBehaviour
     [Tooltip("Renderers that will be enabled/disabled when flickering.")]
     public List<Renderer> renderersForFlicker;
     // flickering variables
+	public GameObject gameoverScreen;
+
     private bool renderingEnabled;
     private float elapsedKnockbackTime;
     private float elapsedInvulnerableTime;
@@ -88,7 +90,8 @@ public class Score : MonoBehaviour
     /// </summary>
     protected virtual void OnDeath()
     {
-        Debug.Log("Player Dead");
+		gameoverScreen.SetActive (true);
+
         //Destroy(gameObject);
     }
 
