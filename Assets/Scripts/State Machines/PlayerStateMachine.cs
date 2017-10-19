@@ -46,8 +46,8 @@ public class PlayerStateMachine : MonoBehaviour {
     {
         if (playerInput.action)
         {
-            //photonShot.Fire();
-            fsm.ChangeState(PlayerStates.Flash);
+            photonShot.Fire();
+            //fsm.ChangeState(PlayerStates.Flash);
         }
     }
 
