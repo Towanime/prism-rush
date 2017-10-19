@@ -151,22 +151,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
+    - target: {fileID: 114287347042048582, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
-      propertyPath: player
+      propertyPath: highScoreText
       value: 
-      objectReference: {fileID: 677879559}
-    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: photonShot
-      value: 
-      objectReference: {fileID: 677879563}
-    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: flash
-      value: 
-      objectReference: {fileID: 677879562}
-    - target: {fileID: 114745842128369082, guid: 52825e9dc5ded634185e96357ebab2a0,
+      objectReference: {fileID: 384618154}
+    - target: {fileID: 114929747265798710, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
       propertyPath: playerController
       value: 
@@ -226,7 +216,12 @@ Prefab:
       propertyPath: slider
       value: 
       objectReference: {fileID: 10178723}
-    - target: {fileID: 114929747265798710, guid: 52825e9dc5ded634185e96357ebab2a0,
+    - target: {fileID: 114747412855624986, guid: 52825e9dc5ded634185e96357ebab2a0,
+        type: 2}
+      propertyPath: envHazard
+      value: 
+      objectReference: {fileID: 1601744245}
+    - target: {fileID: 114745842128369082, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
       propertyPath: playerController
       value: 
@@ -291,50 +286,31 @@ Prefab:
       propertyPath: timer
       value: 
       objectReference: {fileID: 720039035}
-    - target: {fileID: 114183772431695810, guid: 52825e9dc5ded634185e96357ebab2a0,
+    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
-      propertyPath: startingState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114747412855624986, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: envHazard
+      propertyPath: player
       value: 
-      objectReference: {fileID: 1601744245}
-    - target: {fileID: 82358485462470768, guid: 52825e9dc5ded634185e96357ebab2a0,
+      objectReference: {fileID: 677879559}
+    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
-      propertyPath: OutputAudioMixerGroup
+      propertyPath: photonShot
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790882202667338, guid: 52825e9dc5ded634185e96357ebab2a0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 677879563}
+    - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
+        type: 2}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 677879562}
     - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
       propertyPath: summon1
       value: 
       objectReference: {fileID: 1757831637}
-    - target: {fileID: 114829299380378770, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: flash
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 114829299380378770, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: summon1
-      value: 113
-      objectReference: {fileID: 0}
     - target: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
         type: 2}
       propertyPath: summon2
       value: 
       objectReference: {fileID: 334004714}
-    - target: {fileID: 114829299380378770, guid: 52825e9dc5ded634185e96357ebab2a0,
-        type: 2}
-      propertyPath: summon2
-      value: 101
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52825e9dc5ded634185e96357ebab2a0, type: 2}
   m_IsPrefabParent: 0
@@ -1348,6 +1324,12 @@ MonoBehaviour:
   red: {r: 1, g: 0, b: 0.5176471, a: 1}
   green: {r: 0.44705883, g: 1, b: 0, a: 1}
   yellow: {r: 1, g: 0.8901961, b: 0, a: 1}
+--- !u!114 &384618154 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114045716047171784, guid: f534451c082c6fb4381795c37b2d1523,
+    type: 2}
+  m_PrefabInternal: {fileID: 1752374673}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &446762696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,11 +6082,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 806436369}
---- !u!4 &836997259 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4226334424150174, guid: 52825e9dc5ded634185e96357ebab2a0,
-    type: 2}
-  m_PrefabInternal: {fileID: 6842484}
 --- !u!1 &865869640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6621,67 +6598,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968670518}
---- !u!1 &995916889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 995916890}
-  - component: {fileID: 995916891}
-  m_Layer: 0
-  m_Name: SlimePool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &995916890
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995916889}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 836997259}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &995916891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 995916889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87d0e013047e30419e8d1d1874000f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pooledPrefab: {fileID: 1786574810966012, guid: 34076c97e77414d4b9a031fdd7eda4b1,
-    type: 2}
-  poolSize: 100
-  dynamicSize: 1
-  slimePhases:
-  - hp: 1
-    damage: 1
-    speed: 4.5
-    splitInto: 0
-    scale: {x: 1, y: 1, z: 1}
-  - hp: 10
-    damage: 2
-    speed: 4
-    splitInto: 2
-    scale: {x: 2, y: 2, z: 2}
-  - hp: 25
-    damage: 3
-    speed: 3
-    splitInto: 2
-    scale: {x: 3, y: 3, z: 3}
-  defaultStatPhaseIndex: 3
 --- !u!1 &1006141948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,7 +7191,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 708182094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 964, y: 540, z: 0}
+  m_LocalPosition: {x: 505.5, y: 276.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 497580813}
@@ -8513,27 +8429,21 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1005729253686250, guid: f534451c082c6fb4381795c37b2d1523, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114208988894839496, guid: f534451c082c6fb4381795c37b2d1523,
         type: 2}
       propertyPath: startScreen
       value: 
       objectReference: {fileID: 2135335827}
-    - target: {fileID: 114208988894839496, guid: f534451c082c6fb4381795c37b2d1523,
-        type: 2}
-      propertyPath: gameoverScreenTransition
-      value: 
-      objectReference: {fileID: 1794990091}
     - target: {fileID: 114395855356220852, guid: f534451c082c6fb4381795c37b2d1523,
         type: 2}
       propertyPath: playerStateMachine
       value: 
       objectReference: {fileID: 1128739060}
-    m_RemovedComponents:
-    - {fileID: 114352577426143716, guid: f534451c082c6fb4381795c37b2d1523, type: 2}
+    - target: {fileID: 1005729253686250, guid: f534451c082c6fb4381795c37b2d1523, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f534451c082c6fb4381795c37b2d1523, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1757831637 stripped
@@ -8552,12 +8462,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224951912380226016, guid: f534451c082c6fb4381795c37b2d1523,
     type: 2}
   m_PrefabInternal: {fileID: 1752374673}
---- !u!114 &1794990091 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114395855356220852, guid: f534451c082c6fb4381795c37b2d1523,
-    type: 2}
-  m_PrefabInternal: {fileID: 1752374673}
-  m_Script: {fileID: 11500000, guid: a1150f975a5b0a44fb0b8b505f0ab334, type: 3}
 --- !u!1 &1831678787
 GameObject:
   m_ObjectHideFlags: 0

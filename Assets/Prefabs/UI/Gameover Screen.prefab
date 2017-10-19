@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 224582400638340360}
   - component: {fileID: 222125711257103726}
   - component: {fileID: 114387146581439442}
-  - component: {fileID: 114352577426143716}
   - component: {fileID: 95252562872650846}
   - component: {fileID: 114208988894839496}
   m_Layer: 5
@@ -78,6 +77,23 @@ GameObject:
   - component: {fileID: 95169675896773270}
   m_Layer: 5
   m_Name: Retry Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1681591978631338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224579017370499080}
+  - component: {fileID: 222523728183665698}
+  - component: {fileID: 114045716047171784}
+  m_Layer: 5
+  m_Name: High Score Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,6 +194,39 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114045716047171784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681591978631338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.7294118, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: da8c6e68ded61b244880a0aa63cc4b20, type: 3}
+    m_FontSize: 32
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: HIGH SCORE
 --- !u!114 &114208988894839496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,10 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScreen: {fileID: 0}
-  startScreenPrefab: {fileID: 1478169827378562, guid: d41bc8e4c73d31144923278acd7b3bf5,
-    type: 2}
   gameoverScreen: {fileID: 1005729253686250}
-  screenObject: {fileID: 0}
+  gameoverScreenTransition: {fileID: 114395855356220852}
 --- !u!114 &114329063658286300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,19 +268,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114352577426143716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275999124517196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e1952f2f3059d045b6ba24028d57845, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startScreen: {fileID: 0}
-  startScreenTransition: {fileID: 0}
 --- !u!114 &114387146581439442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +310,7 @@ MonoBehaviour:
   blackBackground: {fileID: 1275999124517196}
   gameoverText: {fileID: 1122003199166192}
   retryButton: {fileID: 1534485466458732}
+  playerStateMachine: {fileID: 0}
 --- !u!114 &114546257357619730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,6 +397,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122003199166192}
+--- !u!222 &222523728183665698
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681591978631338}
 --- !u!222 &222527065100472174
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -405,6 +446,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -246}
   m_SizeDelta: {x: 243, y: 116}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224579017370499080
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681591978631338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -382, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224951912380226016}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3, y: -382}
+  m_SizeDelta: {x: 600, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224582400638340360
 RectTransform:
   m_ObjectHideFlags: 1
@@ -447,13 +506,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1005729253686250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224582400638340360}
   - {fileID: 224805664189823974}
   - {fileID: 224120453201037310}
+  - {fileID: 224579017370499080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

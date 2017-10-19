@@ -79,6 +79,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1263730907618650
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4518653697197638}
+  - component: {fileID: 114077180385421826}
+  m_Layer: 0
+  m_Name: SlimePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1517170074277422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4916994575564534}
+  - component: {fileID: 114287347042048582}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1655282757609964
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1854284428213096
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927656089668804}
+  - {fileID: 4518653697197638}
   m_Father: {fileID: 4384040413164740}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -197,6 +230,7 @@ Transform:
   - {fileID: 4556445665385612}
   - {fileID: 4513212090467608}
   - {fileID: 4226334424150174}
+  - {fileID: 4916994575564534}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -215,6 +249,19 @@ Transform:
   - {fileID: 4641386773040354}
   - {fileID: 4741829745589784}
   m_Father: {fileID: 4384040413164740}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4518653697197638
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263730907618650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4226334424150174}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4556445665385612
@@ -267,6 +314,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4513212090467608}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4916994575564534
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517170074277422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4384040413164740}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4927656089668804
@@ -407,6 +467,38 @@ MonoBehaviour:
   startingState: 5
   playerDirections: 
   finishedList: 
+--- !u!114 &114077180385421826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263730907618650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87d0e013047e30419e8d1d1874000f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledPrefab: {fileID: 1786574810966012, guid: 34076c97e77414d4b9a031fdd7eda4b1,
+    type: 2}
+  poolSize: 100
+  dynamicSize: 1
+  slimePhases:
+  - hp: 1
+    damage: 1
+    speed: 4.5
+    splitInto: 0
+    scale: {x: 1, y: 1, z: 1}
+  - hp: 10
+    damage: 2
+    speed: 4
+    splitInto: 2
+    scale: {x: 2, y: 2, z: 2}
+  - hp: 25
+    damage: 3
+    speed: 3
+    splitInto: 2
+    scale: {x: 3, y: 3, z: 3}
+  defaultStatPhaseIndex: 3
 --- !u!114 &114183772431695810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,7 +512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 114352141087695312}
   playerStateMachine: {fileID: 114275702158692740}
-  startingState: 1
+  startingState: 0
 --- !u!114 &114275702158692740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,7 +528,21 @@ MonoBehaviour:
   player: {fileID: 0}
   photonShot: {fileID: 0}
   flash: {fileID: 0}
+  summon1: {fileID: 0}
+  summon2: {fileID: 0}
   startingState: 2
+--- !u!114 &114287347042048582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517170074277422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601bac317aac73849ba93415ff3b0fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreText: {fileID: 0}
 --- !u!114 &114352141087695312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -453,6 +559,9 @@ MonoBehaviour:
   rawDirection: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
   action: 0
+  flash: 0
+  summon1: 0
+  summon2: 0
   selectionWheel: 0
 --- !u!114 &114745842128369082
 MonoBehaviour:
@@ -496,6 +605,9 @@ MonoBehaviour:
   up: 119
   down: 115
   action: 323
+  flash: 32
+  summon1: 113
+  summon2: 101
   SelectionWheel: 324
   invertY: 0
   mouseXSensitivity: 2
