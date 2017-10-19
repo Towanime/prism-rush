@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnvHazardManager : MonoBehaviour {
 
 	public GameObject envHazard;
