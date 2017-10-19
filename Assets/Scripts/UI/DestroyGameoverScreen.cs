@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DestroyGameoverScreen : MonoBehaviour {
 
@@ -14,5 +15,6 @@ public class DestroyGameoverScreen : MonoBehaviour {
 	public void boom(){
 		gameoverScreenTransition.transition = false;
 		gameoverScreen.SetActive (false);
+		SceneManager.LoadScene( SceneManager.GetActiveScene().name );
 	}
 }

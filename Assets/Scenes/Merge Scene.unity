@@ -6652,6 +6652,7 @@ MonoBehaviour:
   blackBackground: {fileID: 1388000725}
   gameoverText: {fileID: 1099659704}
   retryButton: {fileID: 1119904699}
+  playerStateMachine: {fileID: 0}
 --- !u!114 &1034930189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6958,6 +6959,12 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119904699}
+--- !u!114 &1128739060 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114275702158692740, guid: 52825e9dc5ded634185e96357ebab2a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 6842484}
+  m_Script: {fileID: 11500000, guid: 8cce7f376bbc805478023968dfd5a523, type: 3}
 --- !u!1 &1145231362
 GameObject:
   m_ObjectHideFlags: 0
@@ -7505,7 +7512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41babe865102e1439e45034f469f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStateMachine: {fileID: 0}
+  gameStateMachine: {fileID: 905495989}
   GameoverScreenTransition: {fileID: 1030956801}
   blackBackground: {fileID: 1388000725}
 --- !u!114 &1476716833
@@ -8236,6 +8243,11 @@ Prefab:
       propertyPath: gameoverScreenTransition
       value: 
       objectReference: {fileID: 1794990091}
+    - target: {fileID: 114395855356220852, guid: f534451c082c6fb4381795c37b2d1523,
+        type: 2}
+      propertyPath: playerStateMachine
+      value: 
+      objectReference: {fileID: 1128739060}
     m_RemovedComponents:
     - {fileID: 114352577426143716, guid: f534451c082c6fb4381795c37b2d1523, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f534451c082c6fb4381795c37b2d1523, type: 2}

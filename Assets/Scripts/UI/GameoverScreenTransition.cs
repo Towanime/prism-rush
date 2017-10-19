@@ -10,8 +10,11 @@ public class GameoverScreenTransition : MonoBehaviour {
 	public GameObject gameoverText;
 	public GameObject retryButton;
 
+	public PlayerStateMachine playerStateMachine;
+
 	void Update () {
 		if (transition) {
+			playerStateMachine.FSM.ChangeState(PlayerStates.Inactive);
 			blackBackground.GetComponent<Animator> ().SetTrigger("Retry");
 			gameoverText.GetComponent<Animator> ().SetTrigger("Retry");
 			retryButton.GetComponent<Animator> ().SetBool("animEnd",true);
