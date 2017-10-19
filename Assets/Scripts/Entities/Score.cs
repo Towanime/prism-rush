@@ -78,7 +78,7 @@ public class Score : MonoBehaviour
     {
         currentScore = (int) Mathf.Max(currentScore - damage, 0);
         // if it's not on last chance give it one point
-        if (!onLastChance && currentScore == 0)
+        if (!onLastChance && (currentScore == 0 || currentScore == 1))
         {
             currentScore = 1;
             onLastChance = true;

@@ -9,6 +9,8 @@ public class PlayerStateMachine : MonoBehaviour {
     public GameObject player;
     public PhotonShot photonShot;
     public Flash flash;
+    public Summon summon1;
+    public Summon summon2;
     public PlayerStates startingState = PlayerStates.Inactive;
 
     private StateMachine<PlayerStates> fsm;
@@ -47,7 +49,18 @@ public class PlayerStateMachine : MonoBehaviour {
         if (playerInput.action)
         {
             photonShot.Fire();
-            //fsm.ChangeState(PlayerStates.Flash);
+        }else if (playerInput.flash)
+        {
+            fsm.ChangeState(PlayerStates.Flash);
+        }
+        // enemy summoning
+        if (playerInput.summon1)
+        {
+            summon1.SummonEnemy();
+        }
+        if (playerInput.summon2)
+        {
+            summon2.SummonEnemy();
         }
     }
 

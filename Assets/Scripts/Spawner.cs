@@ -26,7 +26,6 @@ public class Spawner : MonoBehaviour {
             {
                 CreateEnemy();
                 waiting = false;
-                Spawn();
             }
         }
     }
@@ -35,10 +34,10 @@ public class Spawner : MonoBehaviour {
     /// Will start the timer and other spawn conditions to check before creating the enemy on the level.
     /// </summary>
     /// <returns></returns>
-    public bool Spawn()
+    public bool Spawn(GameObject prefab)
     {
         if (waiting) return false;
-
+        enemyPrefab = prefab;
         // start waiting
         waiting = true;
         currentSpawnTime = 0;

@@ -13,7 +13,10 @@ public class PlayerInput : MonoBehaviour
     [Tooltip("Rotation from the mouse to apply on the camera.")]
     public Vector3 rotation;
     public bool action;
-	public bool selectionWheel;
+    public bool flash;
+    public bool summon1;
+    public bool summon2;
+    public bool selectionWheel;
 
     void Update()
     {
@@ -65,6 +68,9 @@ public class PlayerInput : MonoBehaviour
     private void SetActions()
     {
         this.action = Input.GetKey(this.config.action);
+        this.flash = Input.GetKey(this.config.flash);
+        this.summon1 = Input.GetKeyDown(this.config.summon1);
+        this.summon2 = Input.GetKeyDown(this.config.summon2);
     }  
 
 	private void SetWheel()
